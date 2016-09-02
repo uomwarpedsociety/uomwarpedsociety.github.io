@@ -8,5 +8,11 @@ app.controller('EventController', function($scope,$routeParams) {
       description: "This is a short description about this event",
       photo: "/image/eventphoto/",
     },
+    {
+      date: "xx/xx/xx",
+      title: "Second Event",
+      description: "NEW EVENT ADDED!!!",
+      photo: "/image/eventphoto/",
+    },
   ]
 })
