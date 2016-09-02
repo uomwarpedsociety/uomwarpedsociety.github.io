@@ -34,11 +34,6 @@ app.controller('MainController', function($scope,$route,$routeParams,$location) 
   $scope.$routeParams = $routeParams;
 })
 
-app.controller('PhotoController', function($scope,$routeParams) {
-  $scope.name = 'PhotoController';
-  $scope.params = $routeParams;
-})
-
 app.controller('JoinController', function($scope,$routeParams) {
   $scope.name = 'JoinController';
   $scope.params = $routeParams;
