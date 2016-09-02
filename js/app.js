@@ -44,11 +44,6 @@ app.controller('JoinController', function($scope,$routeParams) {
   $scope.params = $routeParams;
 })
 
-app.controller('EventController', function($scope,$routeParams) {
-  $scope.name = 'EventController';
-  $scope.params = $routeParams;
-})
-
 app.controller('CommitteeController', function($scope,$routeParams) {
   $scope.name = 'CommitteeController';
   $scope.params = $routeParams;
