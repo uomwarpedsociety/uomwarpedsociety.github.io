@@ -9,11 +9,11 @@ BODY {
 	font-size:smaller;
 } /*font size definition*/
 
-A         { text-decoration: none; }
-A:link    { color: #CC00FF; }
-A:visited { color: #9966CC; }
-A:active  { color: #FF00FF; }
-A:hover   { color: #6600FF; }
+a         { text-decoration: none; }
+a:link    { color: #CC00FF; }
+a:visited { color: #9966CC; }
+a:active  { color: #FF00FF; }
+a:hover   { color: #6600FF; }
 /* Layout stuff */
 
 /* Solution to forcing floats to stay within container div by
