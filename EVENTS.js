@@ -1,4 +1,3 @@
-
 app.controller('EventController', function($scope,$routeParams) {
   $scope.name = 'EventController';
   $scope.params = $routeParams;
