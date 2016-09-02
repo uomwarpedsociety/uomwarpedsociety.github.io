@@ -1,17 +1,16 @@
 <div id="content" ng-controller="EventController">
+  
       <div id="pagetitle">Coming up this year</div>
 
-      <div ng-repeat="event in events">
-        <div>
-          <h4>{{ event.title }}</h3>
-          <h5>{{ event.date }}</h5>
-        </div>
-        <div>
-          <img ng-src="{{ event.photo }}" alt="{{ event.title }}"/>
-				  <p>
-            {{ event.description }}
-          </p>
-        </div>
-      </div>
+      <div class="container" ng-controller="EventController">
+    		<div ng-repeat="event in events">
+    			<div>
+    				<a href="{{ event.photo }}"><img width="320px" ng-src="{{ event.photo }}"></a>
+    				<p>{{ event.title }}</p>
+            <p>{{ event.description }}</p>
+            <p>{{ event.date }}</p>
+    			</div>
+    		</div>
+    	</div>
 
 </div>
