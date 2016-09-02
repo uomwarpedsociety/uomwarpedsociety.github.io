@@ -7,7 +7,7 @@ app.controller('EventController', function($scope,$routeParams) {
       date: "xx/xx/xx",
       title: "First Event",
       description: "This is a short description about this event",
-      photo: "/image/eventphoto/join.png",
+      photo: "/image/eventphoto/",
     },
   ]
 })
