@@ -1,3 +1,11 @@
+clickmain = function(){
+  document.getElementById('aboutimage').src = "image/about.png";
+  document.getElementById('eventimage').src = "image/events.png";
+  document.getElementById('pictureimage').src = "image/pictures.png";
+  document.getElementById('joinimage').src = "image/join.png";
+  document.getElementById('committeeimage').src = "image/committee.png";
+}
+
 clickabout = function(){
   document.getElementById('aboutimage').src = "image/aboutselected.png";
   document.getElementById('eventimage').src = "image/events.png";
