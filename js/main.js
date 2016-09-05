@@ -1,6 +1,5 @@
 mainload = function(){
   currentpage = new CurrentPage();
-  document.getElementById('gotomain').click();
 };
 
 clickmain = function(){
