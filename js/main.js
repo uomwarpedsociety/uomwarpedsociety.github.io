@@ -1,5 +1,6 @@
 mainload = function(){
   currentpage = new CurrentPage();
+  document.getElementById('titleimage').click();
 };
 
 clickmain = function(){
