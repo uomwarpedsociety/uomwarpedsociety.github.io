@@ -1,3 +1,7 @@
+mainload = function(){
+  currentpage = new CurrentPage();
+};
+
 clickmain = function(){
   document.getElementById('aboutimage').src = "image/about.png";
   document.getElementById('eventimage').src = "image/events.png";
@@ -27,25 +31,49 @@ hovercommittee = function(){
 }
 
 leaveabout = function(){
-  document.getElementById('aboutimage').src = "image/about.png";
+  if (currentpage.about === false){
+    document.getElementById('aboutimage').src = "image/about.png";
+  }
+  else {
+    document.getElementById('aboutimage').src = "image/aboutselected.png";
+  }
 }
 
 leaveevent = function(){
-  document.getElementById('eventimage').src = "image/events.png";
+  if (currentpage.event === false){
+    document.getElementById('eventimage').src = "image/event.png";
+  }
+  else {
+    document.getElementById('eventimage').src = "image/eventselected.png";
+  }
 }
 
 leavepicture = function(){
-  document.getElementById('pictureimage').src = "image/pictures.png";
+  if (currentpage.picture === false){
+    document.getElementById('pictureimage').src = "image/pictures.png";
+  }
+  else {
+    document.getElementById('pictureimage').src = "image/picturesselected.png";
+  }
 }
 
 leavejoin = function(){
-  document.getElementById('joinimage').src = "image/join.png";
+  if (currentpage.join === false){
+    document.getElementById('joinimage').src = "image/join.png";
+  }
+  else {
+    document.getElementById('joinimage').src = "image/joinselected.png";
+  }
 }
 
 leavecommittee = function(){
-  document.getElementById('committeeimage').src = "image/committee.png";
+  if (currentpage.committee === false){
+    document.getElementById('committeeimage').src = "image/committee.png";
+  }
+  else {
+    document.getElementById('committeeimage').src = "image/committeeselected.png";
+  }
 }
-
 
 clickabout = function(){
   document.getElementById('aboutimage').src = "image/aboutselected.png";
@@ -53,6 +81,8 @@ clickabout = function(){
   document.getElementById('pictureimage').src = "image/pictures.png";
   document.getElementById('joinimage').src = "image/join.png";
   document.getElementById('committeeimage').src = "image/committee.png";
+  currentpage.reset();
+  currentpage.about = true;
 }
 
 clickevent = function(){
@@ -61,6 +91,8 @@ clickevent = function(){
   document.getElementById('pictureimage').src = "image/pictures.png";
   document.getElementById('joinimage').src = "image/join.png";
   document.getElementById('committeeimage').src = "image/committee.png";
+  currentpage.reset();
+  currentpage.event = true;
 }
 
 clickpicture = function(){
@@ -69,6 +101,8 @@ clickpicture = function(){
   document.getElementById('pictureimage').src = "image/picturesselected.png";
   document.getElementById('joinimage').src = "image/join.png";
   document.getElementById('committeeimage').src = "image/committee.png";
+  currentpage.reset();
+  currentpage.picture = true;
 }
 
 clickjoin = function(){
@@ -77,6 +111,8 @@ clickjoin = function(){
   document.getElementById('pictureimage').src = "image/pictures.png";
   document.getElementById('joinimage').src = "image/joinselected.png";
   document.getElementById('committeeimage').src = "image/committee.png";
+  currentpage.reset();
+  currentpage.join = true;
 }
 
 clickcommittee = function(){
@@ -85,4 +121,23 @@ clickcommittee = function(){
   document.getElementById('pictureimage').src = "image/pictures.png";
   document.getElementById('joinimage').src = "image/join.png";
   document.getElementById('committeeimage').src = "image/committeeselected.png";
+  currentpage.reset();
+  currentpage.committee = true;
 }
+
+CurrentPage = function(){
+  this.about = false;
+  this.event = false;
+  this.picture = false;
+  this.join = false;
+  this.committee = false;
+  this.reset = function(){
+    this.about = false;
+    this.event = false;
+    this.picture = false;
+    this.join = false;
+    this.committee = false;
+  }
+}
+
+mainload();
