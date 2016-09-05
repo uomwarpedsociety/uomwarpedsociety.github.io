@@ -29,11 +29,11 @@
 </div>
 
 <div id="menubar">
-		<a href="#/about"><img id="aboutimage" src="image/about.png" alt="Storytime" onmouseover="hoverabout();" onclick="clickabout();"/></a>
-		<a href="#/events"><img id="eventimage" src="image/events.png" alt="What we do" onmouseover="hoverevent();" onclick="clickevent();"/></a>
-		<a href="#/committee"><img id="committeeimage" src="image/committee.png" alt="Hail Anubis" onmouseover="hovercommittee();" onclick="clickcommittee();"/></a>
-		<a href="#/pictures"><img id="pictureimage" src="image/pictures.png" alt="Warning: May contain Nerd" onmouseover="hoverpicture();" onclick="clickpicture();"/></a>
-		<a href="#/join"><img id="joinimage" src="image/join.png" alt="One of us! One of us!" onmouseover="hoverjoin();" onclick="clickjoin();"/></a>
+		<a href="#/about"><img id="aboutimage" src="image/about.png" alt="Storytime" onmouseleave="leaveabout();" onmouseenter="hoverabout();" onclick="clickabout();"/></a>
+		<a href="#/events"><img id="eventimage" src="image/events.png" alt="What we do" onmouseleave="leaveevent();" onmouseenter="hoverevent();" onclick="clickevent();"/></a>
+		<a href="#/committee"><img id="committeeimage" src="image/committee.png" alt="Hail Anubis" onmouseleave="leavecommittee();" onmouseenter="hovercommittee();" onclick="clickcommittee();"/></a>
+		<a href="#/pictures"><img id="pictureimage" src="image/pictures.png" alt="Warning: May contain Nerd" onmouseleave="leavepicture();" onmouseenter="hoverpicture();" onclick="clickpicture();"/></a>
+		<a href="#/join"><img id="joinimage" src="image/join.png" alt="One of us! One of us!" onmouseleave="leavejoin();" onmouseenter="hoverjoin();" onclick="clickjoin();"/></a>
 </div>
 
 <div ng-view></div>
