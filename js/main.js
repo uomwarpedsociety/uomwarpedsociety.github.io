@@ -41,10 +41,10 @@ leaveabout = function(){
 
 leaveevent = function(){
   if (currentpage.event === false){
-    document.getElementById('eventimage').src = "image/event.png";
+    document.getElementById('eventimage').src = "image/events.png";
   }
   else {
-    document.getElementById('eventimage').src = "image/eventselected.png";
+    document.getElementById('eventimage').src = "image/eventsselected.png";
   }
 }
 
