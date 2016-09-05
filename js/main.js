@@ -8,6 +8,7 @@ clickmain = function(){
   document.getElementById('pictureimage').src = "image/pictures.png";
   document.getElementById('joinimage').src = "image/join.png";
   document.getElementById('committeeimage').src = "image/committee.png";
+  currentpage.reset();
 }
 
 hoverabout = function(){
