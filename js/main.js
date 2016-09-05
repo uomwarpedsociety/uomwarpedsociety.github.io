@@ -2,6 +2,10 @@ mainload = function(){
   currentpage = new CurrentPage();
 };
 
+gotomain = function(){
+  document.getElementById('titleclicker').click();
+};
+
 clickmain = function(){
   document.getElementById('aboutimage').src = "image/about.png";
   document.getElementById('eventimage').src = "image/events.png";

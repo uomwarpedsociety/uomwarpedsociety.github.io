@@ -8,7 +8,7 @@ app.config(function ($routeProvider) {
     })
     .when('/about', {
       controller: 'MainController',
-      templateUrl: 'page/about.html'
+      templateUrl: 'page/about.html',
     })
     .when('/pictures', {
       controller: 'PhotoController',
