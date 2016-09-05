@@ -6,6 +6,27 @@ clickmain = function(){
   document.getElementById('committeeimage').src = "image/committee.png";
 }
 
+hoverabout = function(){
+  document.getElementById('aboutimage').src = "image/abouthover.png";
+}
+
+hoverevent = function(){
+  document.getElementById('eventimage').src = "image/eventshover.png";
+}
+
+hoverpicture = function(){
+  document.getElementById('pictureimage').src = "image/pictureshover.png";
+}
+
+hoverjoin = function(){
+  document.getElementById('joinimage').src = "image/joinhover.png";
+}
+
+hovercommittee = function(){
+  document.getElementById('committeeimage').src = "image/committeehover.png";
+}
+
+
 clickabout = function(){
   document.getElementById('aboutimage').src = "image/aboutselected.png";
   document.getElementById('eventimage').src = "image/events.png";
