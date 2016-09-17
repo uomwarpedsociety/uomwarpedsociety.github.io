@@ -87,4 +87,10 @@ a:hover   { color: #6600FF; }
 	padding: 10px;
 	border: 5px;
 	background-color: grey;
+	align-content: center;
+}
+
+#eventphoto {
+	height: 250px;
+	width: 250px;
 }
