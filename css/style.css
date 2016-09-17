@@ -97,5 +97,9 @@ a:hover   { color: #6600FF; }
 }
 
 #eventtitle {
-	color: white;
+	a         { text-decoration: none; }
+	a:link    { color: #CC00FF; }
+	a:visited { color: #9966CC; }
+	a:active  { color: #FF00FF; }
+	a:hover   { color: #6600FF; }
 }
