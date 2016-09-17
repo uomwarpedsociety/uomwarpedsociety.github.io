@@ -6,7 +6,7 @@ app.controller('EventController', function($scope,$routeParams) {
       date: "26/09/2016",
       title: "Quiz Night and Welcome Event",
       description: "Our first event of the year! This will be a pub quiz night followed by general meet and greet with everyone to get to know all of you lovely folks! Where: Sandbar,",
-      photo: "/image/eventphoto/quiz1.jpg",
+      photo: "/image/eventphoto/quizavengers.jpg",
       facebooklink: "",
     },
     {
