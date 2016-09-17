@@ -95,3 +95,7 @@ a:hover   { color: #6600FF; }
 	height: 240px;
 	width: 423px;
 }
+
+#eventdescription {
+	color: white;
+}
