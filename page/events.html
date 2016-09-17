@@ -2,12 +2,14 @@
       <div id="pagetitle">Coming up this year</div>
       <div ng-repeat="event in events">
         <div id="event">
-          <h4>{{ event.title }}</h3>
-          <h5>{{ event.date }}</h5>
-        </div>
-        <div id="event">
-          <img id="eventphoto" ng-src="{{ event.photo }}">
-				  <p>{{ event.description }}</p>
+          <div>
+            <h4>{{ event.title }}</h3>
+            <h5>{{ event.date }}</h5>
+          </div>
+          <div>
+            <img id="eventphoto" ng-src="{{ event.photo }}">
+				    <p>{{ event.description }}</p>
+          </div>
         </div>
       </div>
 </div>
