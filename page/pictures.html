@@ -1,24 +1,24 @@
 <div id="content">
 			<table border="0" id="center" ng-controller="PhotoController" ng-repeat="photo in photos">
 				<tr id="photolink">
-					<td id="photoblock"><a href="{{ photo.url }}"><img width="240px" ng-src="{{ photo.url }}"></a></td>
-          <td id="photoblock"><a href="{{ photo.url }}"><img width="240px" ng-src="{{ photo.url }}"></a></td>
-          <td id="photoblock"><a href="{{ photo.url }}"><img width="240px" ng-src="{{ photo.url }}"></a></td>
+					<td id="photoblock"><a href="{{ photo.url1 }}"><img width="240px" ng-src="{{ photo.url1 }}"></a></td>
+          <td id="photoblock"><a href="{{ photo.url2 }}"><img width="240px" ng-src="{{ photo.url2 }}"></a></td>
+          <td id="photoblock"><a href="{{ photo.url3 }}"><img width="240px" ng-src="{{ photo.url3 }}"></a></td>
 				</tr>
 				<tr>
-					<td>{{ photo.date }}</td>
-					<td>{{ photo.date }}</td>
-					<td>{{ photo.date }}</td>
+					<td>{{ photo.date1 }}</td>
+					<td>{{ photo.date2 }}</td>
+					<td>{{ photo.date3 }}</td>
 				</tr>
         <tr>
-					<td>{{ photo.comment }}</td>
-					<td>{{ photo.comment }}</td>
-					<td>{{ photo.comment }}</td>
+					<td>{{ photo.comment1 }}</td>
+					<td>{{ photo.comment2 }}</td>
+					<td>{{ photo.comment3 }}</td>
 				</tr>
         <tr>
-					<td>{{ photo.location }}</td>
-					<td>{{ photo.location }}</td>
-					<td>{{ photo.location }}</td>
+					<td>{{ photo.location1 }}</td>
+					<td>{{ photo.location2 }}</td>
+					<td>{{ photo.location3 }}</td>
 				</tr>
 			</table>
 </div>
