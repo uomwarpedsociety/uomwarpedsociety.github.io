@@ -1,7 +1,7 @@
 <div id="content" ng-controller="EventController">
       <div id="pagetitle">Coming up this year</div>
       <div ng-repeat="event in events">
-        <div id="event">
+        <a ng-src="event.url"><div id="event">
           <div>
             <h4><b>{{ event.title }}</b></h3 id="eventtitle">
             <h5>{{ event.date }}</h5 id="eventdate">
@@ -11,5 +11,5 @@
 				    <p id="eventdescription">{{ event.description }}</p>
           </div>
         </div>
-      </div>
+      </div></a>
 </div>
