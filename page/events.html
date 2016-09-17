@@ -3,12 +3,12 @@
       <div ng-repeat="event in events">
         <div id="event">
           <div>
-            <h4>{{ event.title }}</h3>
-            <h5>{{ event.date }}</h5>
+            <h4>{{ event.title }}</h3 id="eventtitle">
+            <h5>{{ event.date }}</h5 id="eventdate">
           </div>
           <div>
             <img id="eventphoto" ng-src="{{ event.photo }}">
-				    <p>{{ event.description }}</p>
+				    <p id="eventdescription">{{ event.description }}</p>
           </div>
         </div>
       </div>
