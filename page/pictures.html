@@ -2,10 +2,12 @@
   <div id="pagetitle">Photos!</div>
   <div class="container" width="765px" ng-controller="PhotoController">
 		<div class="col-sm-4" ng-repeat="photo in photos">
-			<div id="photolink">
-				<a href="{{ photo.url }}"><img width="320px" ng-src="{{ photo.url }}"></a>
-				<p>{{ photo.location }} {{ photo.date }} {{ photo.comment }}</p>
-			</div>
+      <table border="0" id="center">
+			  <tr id="photolink">
+			    <a href="{{ photo.url }}"><img width="320px" ng-src="{{ photo.url }}"></a>
+			    <p>{{ photo.location }} {{ photo.date }} {{ photo.comment }}</p>
+			  </tr>
+      </table>
 		</div>
 	</div>
 </div>
