@@ -103,3 +103,9 @@ a:hover   { color: #6600FF; }
 #eventdate {
 	color: white;
 }
+
+#photoblock {
+	border: 10px;
+	border-color: black;
+	border-style: solid;
+}

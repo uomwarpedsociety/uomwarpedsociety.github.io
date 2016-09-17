@@ -1,7 +1,7 @@
 <div id="content">
 			<table border="0" id="center" ng-controller="PhotoController" ng-repeat="photo in photos">
 				<tr id="photolink">
-					<td><a href="{{ photo.url }}"><img width="320px" ng-src="{{ photo.url }}"></a></td>
+					<td id="photoblock"><a href="{{ photo.url }}"><img width="700px" ng-src="{{ photo.url }}"></a></td>
 				</tr>
 				<tr>
 					<td>{{ photo.location }}</td>
