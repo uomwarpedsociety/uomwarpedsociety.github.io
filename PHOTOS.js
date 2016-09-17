@@ -5,7 +5,7 @@ app.controller('PhotoController', function($scope, $routeParams) {
     {
       location: "",
       url: "/image/photos/",
-      comment: "comment",
+      comment: "",
       date: "xx/xx/xx",
     },
   ]
