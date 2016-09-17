@@ -1,12 +1,24 @@
 <div id="content">
 			<table border="0" id="center" ng-controller="PhotoController" ng-repeat="photo in photos">
 				<tr id="photolink">
-					<td id="photoblock"><a href="{{ photo.url }}"><img width="700px" ng-src="{{ photo.url }}"></a></td>
+					<td id="photoblock"><a href="{{ photo.url }}"><img width="240px" ng-src="{{ photo.url }}"></a></td>
+          <td id="photoblock"><a href="{{ photo.url }}"><img width="240px" ng-src="{{ photo.url }}"></a></td>
+          <td id="photoblock"><a href="{{ photo.url }}"><img width="240px" ng-src="{{ photo.url }}"></a></td>
 				</tr>
 				<tr>
-					<td>{{ photo.location }}</td>
 					<td>{{ photo.date }}</td>
+					<td>{{ photo.date }}</td>
+					<td>{{ photo.date }}</td>
+				</tr>
+        <tr>
 					<td>{{ photo.comment }}</td>
+					<td>{{ photo.comment }}</td>
+					<td>{{ photo.comment }}</td>
+				</tr>
+        <tr>
+					<td>{{ photo.location }}</td>
+					<td>{{ photo.location }}</td>
+					<td>{{ photo.location }}</td>
 				</tr>
 			</table>
 </div>
