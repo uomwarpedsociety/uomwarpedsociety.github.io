@@ -82,3 +82,9 @@ a:hover   { color: #6600FF; }
 	height:35px;
 	margin: 0px 10px 0px 0px;
 } /*Footer*/
+
+.event {
+	padding: 10px;
+	border: 5px;
+	background: grey;
+}
