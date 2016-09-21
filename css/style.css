@@ -4,23 +4,18 @@ BODY {
 	background-size: 100%;
 	color: #d9d7d7;
 	background-attachment:fixed;
-	} /*Background Image*/
+	}
 
 .small {
 	font-size:smaller;
-} /*font size definition*/
+}
 
 a         { text-decoration: none; }
 a:link    { color: #CC00FF; }
 a:visited { color: #9966CC; }
 a:active  { color: #FF00FF; }
 a:hover   { color: #6600FF; }
-/* Layout stuff */
 
-/* Solution to forcing floats to stay within container div by
-	http://www.positioniseverything.net/easyclearing.html
-		--maybe I'll even get around to reading it sometime
-*/
 .clearfix:after {
     content: ".";
     display: block;
@@ -29,38 +24,37 @@ a:hover   { color: #6600FF; }
     visibility: hidden;
 }
 .clearfix {display: inline-table;}
-/* Hides from IE-mac \*/
 * html .clearfix {height: 1%;}
 .clearfix {display: block;}
-/* End hide from IE-mac */
+
 
 #wrapper {
 	width: 770px;
 	margin: 0px auto 0px auto;
-	} /*Main Page Content*/
+	}
 
 #menubar {
 	width: 100%;
-	} /*Menu Sidebar*/
+	}
 
 #content {
 	background: black;
 	width: 765px;
 	padding: 10px 10px 10px 10px;
 	margin: 0px 0px 0px 0px;
-} /*Page Content Box*/
+}
 
 #pagetitle{
 	text-align: center;
 	font-weight: bold;
 	font-size: 150%;
-} /*Page Title*/
+}
 
 #titleimage{
 	float:center;
 	width:766px;
 	height:236px;
-} /*Title Banner*/
+}
 
 #center{
 	text-align: center;
@@ -68,6 +62,7 @@ a:hover   { color: #6600FF; }
     margin: 0 auto;
 	width: 750px;
 }
+
 #history{
 	text-align: center;
 	float: center;
@@ -82,7 +77,7 @@ a:hover   { color: #6600FF; }
 	bottom:0;
 	height:35px;
 	margin: 0px 10px 0px 0px;
-} /*Footer*/
+}
 
 #event {
 	border: 10px;
