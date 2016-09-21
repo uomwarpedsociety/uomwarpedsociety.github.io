@@ -1,6 +1,6 @@
 <div id="content" ng-controller="EventController">
-      <div id="pagetitle">Coming up this year</div>
-      <div ng-repeat="event in events">
+      <div id="pagetitle"><a href="#/pastevents"><h3><b>Back to current events</b></h3></a></div>
+      <div ng-repeat="event in pastevents">
         <div id="event">
           <div>
             <a ng-href="{{ event.url }}"><h3><b>{{ event.title }}</b></h3></a>
@@ -14,5 +14,4 @@
           </div>
         </div>
       </div>
-      <div id="pagetitle"><a href="#/pastevents"><h3><b>Click here to see previous events!</b></h3></a></div>
 </div>

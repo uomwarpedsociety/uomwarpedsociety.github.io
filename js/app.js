@@ -22,6 +22,10 @@ app.config(function ($routeProvider) {
       controller: 'EventController',
       templateUrl: 'page/events.html'
     })
+    .when('/pastevents', {
+      controller: 'EventController',
+      templateUrl: 'page/pastevents.html'
+    })
     .when('/committee', {
       controller: 'CommitteeController',
       templateUrl: 'page/committee.html'
