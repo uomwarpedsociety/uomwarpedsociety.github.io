@@ -30,6 +30,33 @@ app.controller('EventController', function($scope,$routeParams) {
       location: "The AMC (M4 4EN)",
     },
   ];
-  $scope.pastevents = [];
-  $scope.currentevent = [];
+  $scope.pastevents = [
+    {
+      date: "16/07/2016",
+      title: "Warped's 30th Anniversary Reunion Party",
+      description: "The monumentous 30th Anniversary of Warped is here!",
+      photo: "/image/eventphoto/30th.jpg",
+      url: "https://www.facebook.com/events/222770851410698/",
+      time: "7:00pm",
+      location: "Sandbar (M1 7HL)",
+    },
+    {
+      date: "29/04/2016",
+      title: "Warped: Civil War Midnight Premier",
+      description: "Midnight screening of Civil War!",
+      photo: "/image/eventphoto/civilwar.jpg",
+      url: "https://www.facebook.com/events/1124120114288430/",
+      time: "00:01am",
+      location: "The AMC (M4 4EN)",
+    },
+    {
+      date: "10/02/2016",
+      title: "Warped does Deadpool",
+      description: "This Wednesday, join us at the AMC for a heartwarming tale of how one man who has lost everything, takes a chance on a miracle surgery to save himself and his relationship with his one true love.",
+      photo: "/image/eventphoto/deadpool.jpg",
+      url: "https://www.facebook.com/events/977889388925188/",
+      time: "7:30pm",
+      location: "The AMC (M4 4EN)",
+    },
+  ];
 })
