@@ -6,7 +6,7 @@ app.controller('EventController', function($scope,$routeParams) {
       date: "21/09/2016",
       title: "Jeff Wayne's Musical War of the Worlds ft. RockSoc",
       description: "Very short notice I'm afraid!! We didn't get venue confirmation until earlier today. But for those that can make it we're doing war of the world's tonight!",
-      photo: "/image/eventphoto/jeffwar.jpg",
+      photo: "/image/eventphoto/jeffwar.png",
       url: "https://www.facebook.com/events/1689315374722047/",
       time: "7:30pm",
       location: "Sandbar (M1 7HL)",
@@ -29,5 +29,7 @@ app.controller('EventController', function($scope,$routeParams) {
       time: "2:30pm",
       location: "The AMC (M4 4EN)",
     },
-  ]
+  ];
+  $scope.pastevents = [];
+  $scope.currentevent = [];
 })
