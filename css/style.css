@@ -1,5 +1,5 @@
 BODY {
-	background: black;
+	background: black no-repeat center scroll;
 	background-image:url('../image/starfield.jpg');
 	background-size: 100%;
 	color: #d9d7d7;
