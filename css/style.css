@@ -3,6 +3,7 @@ BODY {
 	background-image:url('../image/starfield.jpg');
 	background-size: 100%;
 	color: #d9d7d7;
+	background-attachment:fixed;
 	} /*Background Image*/
 
 .small {
