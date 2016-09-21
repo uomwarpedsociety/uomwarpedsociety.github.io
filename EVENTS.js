@@ -3,6 +3,15 @@ app.controller('EventController', function($scope,$routeParams) {
   $scope.params = $routeParams;
   $scope.events = [
     {
+      date: "21/09/2016",
+      title: "Jeff Wayne's Musical War of the Worlds ft. RockSoc",
+      description: "Very short notice I'm afraid!! We didn't get venue confirmation until earlier today. But for those that can make it we're doing war of the world's tonight!",
+      photo: "/image/eventphoto/jeffwar.jpg",
+      url: "https://www.facebook.com/events/1689315374722047/",
+      time: "7:30pm",
+      location: "Sandbar (M1 7HL)",
+    },
+    {
       date: "26/09/2016",
       title: "Quiz Night and Welcome Event",
       description: "Our first event of the year! This will be a pub quiz night followed by general meet and greet with everyone to get to know all of you lovely folks!",
@@ -17,7 +26,7 @@ app.controller('EventController', function($scope,$routeParams) {
       description: "When Jacob discovers clues to a mystery that spans different worlds and times, he finds Miss Peregrine's Home for Peculiar Children. But the mystery and danger deepen as he gets to know the residents and learns about their special powers. Our first Cinema trip of the year.",
       photo: "/image/eventphoto/peculiar.jpg",
       url: "https://www.facebook.com/events/225160511220111/",
-      time: "14:30pm",
+      time: "2:30pm",
       location: "The AMC (M4 4EN)",
     },
   ]
