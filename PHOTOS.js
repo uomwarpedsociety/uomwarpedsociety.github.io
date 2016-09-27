@@ -135,7 +135,7 @@ app.controller('PhotoController', function($scope, $routeParams) {
       url1: "/image/photoalbum/25.jpg",
       comment1: "",
       date1: "",
-    
+
       location2: "",
       url2: "/image/photoalbum/26.jpg",
       comment2: "",
@@ -143,6 +143,22 @@ app.controller('PhotoController', function($scope, $routeParams) {
 
       location3: "",
       url3: "/image/photoalbum/27.jpg",
+      comment3: "",
+      date3: "",
+    },
+    {
+      location1: "",
+      url1: "/image/photoalbum/28.jpg",
+      comment1: "",
+      date1: "",
+
+      location2: "",
+      url2: "/image/photoalbum/29.jpg",
+      comment2: "",
+      date2: "",
+
+      location3: "",
+      url3: "/image/photoalbum/30.jpg",
       comment3: "",
       date3: "",
     },
