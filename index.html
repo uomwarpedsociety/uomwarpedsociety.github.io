@@ -17,38 +17,37 @@
   <script type="text/javascript" src="js/main.js"></script>
   <script type="text/javascript" src="EVENTS.js"></script>
   <script type="text/javascript" src="PHOTOS.js"></script>
-
 </head>
 
 <body ng-controller="MainController">
 
-<div id="wrapper" class="clearfix">
+  <div id="wrapper" class="clearfix">
 
-<div align="left" id="title">
+    <div align="left" id="title">
       <div><a href="#/about" id="titleclicker"><img src="image/warpedbanner.png" id="titleimage" alt="Warped" onclick="clickmain();"/></a></div>
-</div>
+    </div>
 
-<div id="menubar">
-		<a href="#/about"><img id="aboutimage" src="image/about.png" alt="Storytime" onmouseleave="leaveabout();" onmouseenter="hoverabout();" onclick="clickabout();"/></a>
-		<a href="#/events"><img id="eventimage" src="image/events.png" alt="What we do" onmouseleave="leaveevent();" onmouseenter="hoverevent();" onclick="clickevent();"/></a>
-		<a href="#/committee"><img id="committeeimage" src="image/committee.png" alt="Hail Anubis" onmouseleave="leavecommittee();" onmouseenter="hovercommittee();" onclick="clickcommittee();"/></a>
-		<a href="#/pictures"><img id="pictureimage" src="image/pictures.png" alt="Warning: May contain Nerd" onmouseleave="leavepicture();" onmouseenter="hoverpicture();" onclick="clickpicture();"/></a>
-		<a href="#/join"><img id="joinimage" src="image/join.png" alt="One of us! One of us!" onmouseleave="leavejoin();" onmouseenter="hoverjoin();" onclick="clickjoin();"/></a>
-</div>
+    <div id="menubar">
+  		<a href="#/about"><img id="aboutimage" src="image/about.png" alt="Storytime" onmouseleave="leaveabout();" onmouseenter="hoverabout();" onclick="clickabout();"/></a>
+  		<a href="#/events"><img id="eventimage" src="image/events.png" alt="What we do" onmouseleave="leaveevent();" onmouseenter="hoverevent();" onclick="clickevent();"/></a>
+  		<a href="#/committee"><img id="committeeimage" src="image/committee.png" alt="Hail Anubis" onmouseleave="leavecommittee();" onmouseenter="hovercommittee();" onclick="clickcommittee();"/></a>
+  		<a href="#/pictures"><img id="pictureimage" src="image/pictures.png" alt="Warning: May contain Nerd" onmouseleave="leavepicture();" onmouseenter="hoverpicture();" onclick="clickpicture();"/></a>
+  		<a href="#/join"><img id="joinimage" src="image/join.png" alt="One of us! One of us!" onmouseleave="leavejoin();" onmouseenter="hoverjoin();" onclick="clickjoin();"/></a>
+    </div>
 
-<div ng-view></div>
+    <div ng-view></div>
 
-</div>
+  </div>
 
 </body>
 
 <footer id="footer">
-<a href="http://www.facebook.com/groups/warpedscifisoc"><img src="image/iconfacebook.png"  width="30" height="30"  alt="Facebook"/></a>
-<a href="http://www.twitter.com/warpedscifisoc"><img src="image/icontwitter.png" width="30" height="30"  alt="Twitter"/></a>
-<a href="https://www.goodreads.com/user/show/20232843-warped-library"><img src="image/icongoodreads.png" width="30" height="30"  alt="GoodReads"/></a>
-<a href="http://youtu.be/YCsfHVM5x_I?t=50s"><img src="image/iconwhale.png" width="30" height="30"  alt="Oh no, Not Again."/></a>
-<a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="image/iconlinkedin.png" width="30" height="30"  alt="Really?"/></a>
-<a href="http://manchesterstudentsunion.com/groups/warped"><img src="image/iconumsu.jpg"  width="56" height="30"  alt="Manchester Student Union"/></a>
+  <a href="http://www.facebook.com/groups/warpedscifisoc"><img src="image/iconfacebook.png"  width="30" height="30"  alt="Facebook"/></a>
+  <a href="http://www.twitter.com/warpedscifisoc"><img src="image/icontwitter.png" width="30" height="30"  alt="Twitter"/></a>
+  <a href="https://www.goodreads.com/user/show/20232843-warped-library"><img src="image/icongoodreads.png" width="30" height="30"  alt="GoodReads"/></a>
+  <a href="http://youtu.be/YCsfHVM5x_I?t=50s"><img src="image/iconwhale.png" width="30" height="30"  alt="Oh no, Not Again."/></a>
+  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><img src="image/iconlinkedin.png" width="30" height="30"  alt="Really?"/></a>
+  <a href="http://manchesterstudentsunion.com/groups/warped"><img src="image/iconumsu.jpg"  width="56" height="30"  alt="Manchester Student Union"/></a>
 </footer>
 
 </html>
