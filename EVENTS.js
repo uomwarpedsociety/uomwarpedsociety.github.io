@@ -3,15 +3,6 @@ app.controller('EventController', function($scope,$routeParams) {
   $scope.params = $routeParams;
   $scope.events = [
     {
-      date: "02/10/2016",
-      title: "Miss Peregrine's Home for Peculiar Children",
-      description: "When Jacob discovers clues to a mystery that spans different worlds and times, he finds Miss Peregrine's Home for Peculiar Children. But the mystery and danger deepen as he gets to know the residents and learns about their special powers. Our first Cinema trip of the year.",
-      photo: "/image/eventphoto/peculiar.jpg",
-      url: "https://www.facebook.com/events/225160511220111/",
-      time: "2:30pm",
-      location: "The AMC (M4 4EN)",
-    },
-    {
       date: "10/10/2016",
       title: "Curry Night",
       description: "As is typical warped tradition we will be taking our annual trip down the curry mile. Details will follow once we find a venue!",
@@ -67,6 +58,15 @@ app.controller('EventController', function($scope,$routeParams) {
     },
   ];
   $scope.pastevents = [
+    {
+      date: "02/10/2016",
+      title: "Miss Peregrine's Home for Peculiar Children",
+      description: "When Jacob discovers clues to a mystery that spans different worlds and times, he finds Miss Peregrine's Home for Peculiar Children. But the mystery and danger deepen as he gets to know the residents and learns about their special powers. Our first Cinema trip of the year.",
+      photo: "/image/eventphoto/peculiar.jpg",
+      url: "https://www.facebook.com/events/225160511220111/",
+      time: "2:30pm",
+      location: "The AMC (M4 4EN)",
+    },
     {
       date: "26/09/2016",
       title: "Quiz Night and Welcome Event",
