@@ -21,6 +21,15 @@ app.controller('EventController', function($scope,$routeParams) {
       location: "To be announced...",
     },
     {
+      date: "21/10/2016",
+      title: "Mid-term Pub Crawl",
+      description: "Pub Crawl, fancy dress encouraged but not compulsary",
+      photo: "/image/eventphoto/quiz1.jpg",
+      url: "",
+      time: "7pm",
+      location: "Big Hands -> Sandbar -> Old Monkey -> TV21 -> Fab Cafe -> Black Dog",
+    },
+    {
       date: "24/10/2016",
       title: "Monthly Quiz Night #1",
       description: "Our monthly quiz night, take 1.",
