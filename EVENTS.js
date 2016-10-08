@@ -3,6 +3,15 @@ app.controller('EventController', function($scope,$routeParams) {
   $scope.params = $routeParams;
   $scope.events = [
     {
+      date: "25/11/2016",
+      title: "Dr. Strange",
+      description: "Warped does: Dr. Strange! Afterwards we'll of course be going black dog as per usual.",
+      photo: "/image/eventphoto/drstrange.jpg",
+      url: "",
+      time: "8:30pm",
+      location: "The AMC (M4 4EN)",
+    },
+    {
       date: "10/10/2016",
       title: "Curry Night",
       description: "As is typical warped tradition we will be taking our annual trip down the curry mile. Details will follow once we find a venue!",
