@@ -3,15 +3,6 @@ app.controller('EventController', function($scope,$routeParams) {
   $scope.params = $routeParams;
   $scope.events = [
     {
-      date: "10/10/2016",
-      title: "Curry Night",
-      description: "As is typical warped tradition we will be taking our annual trip down the curry mile. Details will follow once we find a venue!",
-      photo: "/image/eventphoto/currynight.jpg",
-      url: "https://www.facebook.com/events/195716250859724/",
-      time: "7:30pm",
-      location: "MyLahore",
-    },
-    {
       date: "21/10/2016",
       title: "Mid-term Pub Crawl",
       description: "Pub Crawl, fancy dress encouraged but not compulsary",
@@ -67,6 +58,15 @@ app.controller('EventController', function($scope,$routeParams) {
     },
   ];
   $scope.pastevents = [
+    {
+      date: "10/10/2016",
+      title: "Curry Night",
+      description: "As is typical warped tradition we will be taking our annual trip down the curry mile. Details will follow once we find a venue!",
+      photo: "/image/eventphoto/currynight.jpg",
+      url: "https://www.facebook.com/events/195716250859724/",
+      time: "7:30pm",
+      location: "MyLahore",
+    },
     {
       date: "02/10/2016",
       title: "Miss Peregrine's Home for Peculiar Children",
