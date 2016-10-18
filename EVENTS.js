@@ -21,6 +21,15 @@ app.controller('EventController', function($scope,$routeParams) {
       location: "Sandbar (M1 7HL)",
     },
     {
+      date: "25/10/2016",
+      title: "Dr. Strange",
+      description: "Warped does: Dr. Strange! Afterwards we'll of course be going black dog as per usual.",
+      photo: "/image/eventphoto/drstrange.jpg",
+      url: "https://www.facebook.com/events/356919091365982/",
+      time: "8:30pm",
+      location: "The AMC (M4 4EN)",
+    },
+    {
       date: "14/11/2016",
       title: "Games and Comics Night",
       description: "This monday we will be dusting off ye olde board games and comics and having a get together for some good old fashioned fun.",
@@ -28,15 +37,6 @@ app.controller('EventController', function($scope,$routeParams) {
       url: "https://www.facebook.com/events/310498939308966/",
       time: "7:30pm",
       location: "Sandbar (M1 7HL)",
-    },
-    {
-      date: "25/11/2016",
-      title: "Dr. Strange",
-      description: "Warped does: Dr. Strange! Afterwards we'll of course be going black dog as per usual.",
-      photo: "/image/eventphoto/drstrange.jpg",
-      url: "",
-      time: "8:30pm",
-      location: "The AMC (M4 4EN)",
     },
     {
       date: "28/11/2016",
