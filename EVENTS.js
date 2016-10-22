@@ -3,15 +3,6 @@ app.controller('EventController', function($scope,$routeParams) {
   $scope.params = $routeParams;
   $scope.events = [
     {
-      date: "21/10/2016",
-      title: "Mid-term Pub Crawl",
-      description: "Pub Crawl, fancy dress encouraged but not compulsary",
-      photo: "/image/eventphoto/barcrawl.jpg",
-      url: "https://www.facebook.com/events/613429592199076/",
-      time: "7pm",
-      location: "Big Hands -> Sandbar -> Old Monkey -> TV21 -> Fab Cafe -> Black Dog",
-    },
-    {
       date: "24/10/2016",
       title: "Monthly Quiz Night #1",
       description: "Our monthly quiz night, take 1.",
@@ -58,6 +49,15 @@ app.controller('EventController', function($scope,$routeParams) {
     },
   ];
   $scope.pastevents = [
+    {
+      date: "21/10/2016",
+      title: "Mid-term Pub Crawl",
+      description: "Pub Crawl, fancy dress encouraged but not compulsary",
+      photo: "/image/eventphoto/barcrawl.jpg",
+      url: "https://www.facebook.com/events/613429592199076/",
+      time: "7pm",
+      location: "Big Hands -> Sandbar -> Old Monkey -> TV21 -> Fab Cafe -> Black Dog",
+    },
     {
       date: "10/10/2016",
       title: "Curry Night",
