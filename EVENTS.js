@@ -9,7 +9,7 @@ app.controller('EventController', function($scope,$routeParams) {
       photo: "/image/eventphoto/quiz1.jpg",
       url: "https://www.facebook.com/events/1210113412394744/",
       time: "7:30pm",
-      location: "Sandbar (M1 7HL)",
+      location: "Pub/Zoo (M1 7HL)",
     },
     {
       date: "25/10/2016",
