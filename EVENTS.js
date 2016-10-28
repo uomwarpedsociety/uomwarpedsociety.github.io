@@ -3,12 +3,12 @@ app.controller('EventController', function($scope,$routeParams) {
   $scope.params = $routeParams;
   $scope.events = [
     {
-      date: "25/10/2016",
-      title: "Dr. Strange",
-      description: "Warped does: Dr. Strange! Afterwards we'll of course be going black dog as per usual.",
-      photo: "/image/eventphoto/drstrange.jpg",
-      url: "https://www.facebook.com/events/356919091365982/",
-      time: "8:30pm",
+      date: "11/11/2016",
+      title: "Arrival",
+      description: "A linguist is recruited by the military to assist in translating alien communications.",
+      photo: "/image/eventphoto/arrival2016.jpg",
+      url: "https://www.facebook.com/events/1409456315762399/",
+      time: "8:25pm",
       location: "The AMC (M4 4EN)",
     },
     {
@@ -19,6 +19,15 @@ app.controller('EventController', function($scope,$routeParams) {
       url: "https://www.facebook.com/events/310498939308966/",
       time: "7:30pm",
       location: "Sandbar (M1 7HL)",
+    },
+    {
+      date: "18/11/2016",
+      title: "Fantastic Beasts and where to find them.",
+      description: "A linguist is recruited by the military to assist in translating alien communications.",
+      photo: "/image/eventphoto/fantasticbeasts.jpg",
+      url: "https://www.facebook.com/events/101914370287763/",
+      time: "00:01am",
+      location: "The AMC (M4 4EN)",
     },
     {
       date: "28/11/2016",
@@ -40,6 +49,15 @@ app.controller('EventController', function($scope,$routeParams) {
     },
   ];
   $scope.pastevents = [
+    {
+      date: "25/10/2016",
+      title: "Dr. Strange",
+      description: "Warped does: Dr. Strange! Afterwards we'll of course be going black dog as per usual.",
+      photo: "/image/eventphoto/drstrange.jpg",
+      url: "https://www.facebook.com/events/356919091365982/",
+      time: "8:30pm",
+      location: "The AMC (M4 4EN)",
+    },
     {
       date: "24/10/2016",
       title: "Monthly Quiz Night #1",
