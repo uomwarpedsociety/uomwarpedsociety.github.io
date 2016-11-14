@@ -3,15 +3,6 @@ app.controller('EventController', function($scope,$routeParams) {
   $scope.params = $routeParams;
   $scope.events = [
     {
-      date: "11/11/2016",
-      title: "Arrival",
-      description: "A linguist is recruited by the military to assist in translating alien communications.",
-      photo: "image/eventphoto/arrival2016.jpg",
-      url: "https://www.facebook.com/events/1409456315762399/",
-      time: "8:25pm",
-      location: "The AMC (M4 4EN)",
-    },
-    {
       date: "14/11/2016",
       title: "Games and Comics Night",
       description: "This monday we will be dusting off ye olde board games and comics and having a get together for some good old fashioned fun.",
@@ -49,6 +40,15 @@ app.controller('EventController', function($scope,$routeParams) {
     },
   ];
   $scope.pastevents = [
+    {
+      date: "11/11/2016",
+      title: "Arrival",
+      description: "A linguist is recruited by the military to assist in translating alien communications.",
+      photo: "image/eventphoto/arrival2016.jpg",
+      url: "https://www.facebook.com/events/1409456315762399/",
+      time: "8:25pm",
+      location: "The AMC (M4 4EN)",
+    },
     {
       date: "25/10/2016",
       title: "Dr. Strange",
