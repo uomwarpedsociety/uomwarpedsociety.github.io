@@ -18,7 +18,7 @@ app.controller('EventController', function($scope,$routeParams) {
       photo: "image/eventphoto/boardgames.jpg",
       url: "https://www.facebook.com/events/310498939308966/",
       time: "7:30pm",
-      location: "Sandbar (M1 7HL)",
+      location: "Turing Tap (M13 9WG)",
     },
     {
       date: "18/11/2016",
