@@ -1,16 +1,7 @@
 app.controller('EventController', function($scope,$routeParams) {
   $scope.name = 'EventController';
   $scope.params = $routeParams;
-  $scope.events = [
-    {
-      date: "14/11/2016",
-      title: "Games and Comics Night",
-      description: "This monday we will be dusting off ye olde board games and comics and having a get together for some good old fashioned fun.",
-      photo: "image/eventphoto/boardgames.jpg",
-      url: "https://www.facebook.com/events/310498939308966/",
-      time: "7:30pm",
-      location: "Turing Tap (M13 9WG)",
-    },
+  $scope.events = [    
     {
       date: "18/11/2016",
       title: "Fantastic Beasts and where to find them.",
@@ -40,6 +31,15 @@ app.controller('EventController', function($scope,$routeParams) {
     },
   ];
   $scope.pastevents = [
+    {
+      date: "14/11/2016",
+      title: "Games and Comics Night",
+      description: "This monday we will be dusting off ye olde board games and comics and having a get together for some good old fashioned fun.",
+      photo: "image/eventphoto/boardgames.jpg",
+      url: "https://www.facebook.com/events/310498939308966/",
+      time: "7:30pm",
+      location: "Turing Tap (M13 9WG)",
+    },
     {
       date: "11/11/2016",
       title: "Arrival",
