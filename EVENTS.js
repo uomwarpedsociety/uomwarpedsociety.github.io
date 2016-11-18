@@ -3,15 +3,6 @@ app.controller('EventController', function($scope,$routeParams) {
   $scope.params = $routeParams;
   $scope.events = [    
     {
-      date: "18/11/2016",
-      title: "Fantastic Beasts and where to find them.",
-      description: "A linguist is recruited by the military to assist in translating alien communications.",
-      photo: "image/eventphoto/fantasticbeasts.jpg",
-      url: "https://www.facebook.com/events/101914370287763/",
-      time: "00:01am",
-      location: "The AMC (M4 4EN)",
-    },
-    {
       date: "28/11/2016",
       title: "Monthly Quiz Night #2",
       description: "Our monthly quiz night, take 2.",
@@ -31,6 +22,15 @@ app.controller('EventController', function($scope,$routeParams) {
     },
   ];
   $scope.pastevents = [
+    {
+      date: "18/11/2016",
+      title: "Fantastic Beasts and where to find them.",
+      description: "A linguist is recruited by the military to assist in translating alien communications.",
+      photo: "image/eventphoto/fantasticbeasts.jpg",
+      url: "https://www.facebook.com/events/101914370287763/",
+      time: "00:01am",
+      location: "The AMC (M4 4EN)",
+    },
     {
       date: "14/11/2016",
       title: "Games and Comics Night",
