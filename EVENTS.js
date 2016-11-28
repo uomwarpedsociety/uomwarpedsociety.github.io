@@ -1,13 +1,13 @@
 app.controller('EventController', function($scope,$routeParams) {
   $scope.name = 'EventController';
   $scope.params = $routeParams;
-  $scope.events = [    
+  $scope.events = [
     {
       date: "28/11/2016",
       title: "Monthly Quiz Night #2",
       description: "Our monthly quiz night, take 2.",
       photo: "image/eventphoto/quiz2.jpg",
-      url: "",
+      url: "https://www.facebook.com/events/356525461369180/",
       time: "7:30pm",
       location: "Sandbar (M1 7HL)",
     },
