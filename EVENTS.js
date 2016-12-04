@@ -4,20 +4,20 @@ app.controller('EventController', function($scope,$routeParams) {
   $scope.events = [
     {
       date: "16/11/2016",
-      title: "Rogue One (day after)",
-      description: "The latest in the star wars franchise!",
+      title: "Rogue One (midnight)",
+      description: "The latest in the star wars franchise! (midnight showing)",
       photo: "image/eventphoto/rogueone.jpg",
-      url: "https://www.facebook.com/events/349281288762089/",
-      time: "19:40pm",
+      url: "https://www.facebook.com/events/1645162055778181/",
+      time: "00:01am",
       location: "The AMC (M4 4EN)",
     },
     {
       date: "16/11/2016",
-      title: "Rogue One (midnight)",
-      description: "The latest in the star wars franchise!",
+      title: "Rogue One (day after)",
+      description: "The latest in the star wars franchise! (regular 7:40 showing)",
       photo: "image/eventphoto/rogueone.jpg",
-      url: "https://www.facebook.com/events/1645162055778181/",
-      time: "00:01am",
+      url: "https://www.facebook.com/events/349281288762089/",
+      time: "19:40pm",
       location: "The AMC (M4 4EN)",
     },
     {
