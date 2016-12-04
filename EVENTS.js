@@ -3,6 +3,35 @@ app.controller('EventController', function($scope,$routeParams) {
   $scope.params = $routeParams;
   $scope.events = [
     {
+      date: "16/11/2016",
+      title: "Rogue One (day after)",
+      description: "The latest in the star wars franchise!",
+      photo: "image/eventphoto/rogueone.jpg",
+      url: "https://www.facebook.com/events/349281288762089/",
+      time: "19:40pm",
+      location: "The AMC (M4 4EN)",
+    },
+    {
+      date: "16/11/2016",
+      title: "Rogue One (midnight)",
+      description: "The latest in the star wars franchise!",
+      photo: "image/eventphoto/rogueone.jpg",
+      url: "https://www.facebook.com/events/1645162055778181/",
+      time: "00:01am",
+      location: "The AMC (M4 4EN)",
+    },
+    {
+      date: "16/12/2016",
+      title: "Christmas Party",
+      description: "CHRISTMAS PARTY & SECRET SANTA, get in touch with me if you want to be involved!",
+      photo: "image/eventphoto/christmas.jpg",
+      url: "https://www.facebook.com/events/990228347749694/",
+      time: "7:30pm",
+      location: " TBA ",
+    },
+  ];
+  $scope.pastevents = [
+    {
       date: "28/11/2016",
       title: "Monthly Quiz Night #2",
       description: "Our monthly quiz night, take 2.",
@@ -11,17 +40,6 @@ app.controller('EventController', function($scope,$routeParams) {
       time: "7:30pm",
       location: "Sandbar (M1 7HL)",
     },
-    {
-      date: "12/12/2016",
-      title: "Christmas Party",
-      description: "Join us for a christmas celebration including the star wars holiday special in time for rogue one later that week and plenty of fun and drinking and even a secret santa!!",
-      photo: "image/eventphoto/christmas.jpg",
-      url: "",
-      time: "7:30pm",
-      location: "Sandbar (M1 7HL)",
-    },
-  ];
-  $scope.pastevents = [
     {
       date: "18/11/2016",
       title: "Fantastic Beasts and where to find them.",
