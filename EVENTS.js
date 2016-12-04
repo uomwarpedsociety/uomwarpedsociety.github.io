@@ -12,15 +12,6 @@ app.controller('EventController', function($scope,$routeParams) {
       location: "The AMC (M4 4EN)",
     },
     {
-      date: "16/11/2016",
-      title: "Rogue One (day after)",
-      description: "The latest in the star wars franchise! (regular 7:40 showing)",
-      photo: "image/eventphoto/rogueone.jpg",
-      url: "https://www.facebook.com/events/349281288762089/",
-      time: "19:40pm",
-      location: "The AMC (M4 4EN)",
-    },
-    {
       date: "16/12/2016",
       title: "Christmas Party",
       description: "CHRISTMAS PARTY & SECRET SANTA, get in touch with me if you want to be involved!",
