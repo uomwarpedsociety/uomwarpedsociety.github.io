@@ -5,15 +5,6 @@ app.controller('EventController', function($scope,$routeParams) {
   ];
   $scope.pastevents = [
     {
-      date: "16/11/2016",
-      title: "Rogue One (midnight)",
-      description: "The latest in the star wars franchise! (midnight showing)",
-      photo: "image/eventphoto/rogueone.jpg",
-      url: "https://www.facebook.com/events/1645162055778181/",
-      time: "00:01am",
-      location: "The AMC (M4 4EN)",
-    },
-    {
       date: "16/12/2016",
       title: "Christmas Party",
       description: "CHRISTMAS PARTY & SECRET SANTA, get in touch with me if you want to be involved!",
@@ -21,6 +12,15 @@ app.controller('EventController', function($scope,$routeParams) {
       url: "https://www.facebook.com/events/990228347749694/",
       time: "7:30pm",
       location: " TBA ",
+    },
+    {
+      date: "15/12/2016",
+      title: "Rogue One (midnight)",
+      description: "The latest in the star wars franchise! (midnight showing)",
+      photo: "image/eventphoto/rogueone.jpg",
+      url: "https://www.facebook.com/events/1645162055778181/",
+      time: "00:01am",
+      location: "The AMC (M4 4EN)",
     },
     {
       date: "28/11/2016",
