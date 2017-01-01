@@ -2,6 +2,8 @@ app.controller('EventController', function($scope,$routeParams) {
   $scope.name = 'EventController';
   $scope.params = $routeParams;
   $scope.events = [
+  ];
+  $scope.pastevents = [
     {
       date: "16/11/2016",
       title: "Rogue One (midnight)",
@@ -20,8 +22,6 @@ app.controller('EventController', function($scope,$routeParams) {
       time: "7:30pm",
       location: " TBA ",
     },
-  ];
-  $scope.pastevents = [
     {
       date: "28/11/2016",
       title: "Monthly Quiz Night #2",
