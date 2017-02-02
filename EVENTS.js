@@ -7,7 +7,7 @@ app.controller('EventController', function($scope,$routeParams) {
       title: "Lego Batman",
       description: "NANANANANANANANA NANANANANANANANA",
       photo: "image/eventphoto/legobatman.jpg",
-      url: "https://www.facebook.com/events/1645162055778181/",
+      url: "https://www.facebook.com/events/1446351932076194/",
       time: "14:00pm",
       location: "The AMC (M4 4EN)",
     },
