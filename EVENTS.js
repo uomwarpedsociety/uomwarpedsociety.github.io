@@ -2,6 +2,15 @@ app.controller('EventController', function($scope,$routeParams) {
   $scope.name = 'EventController';
   $scope.params = $routeParams;
   $scope.events = [
+    {
+      date: "05/02/2017",
+      title: "Lego Batman",
+      description: "NANANANANANANANA NANANANANANANANA",
+      photo: "image/eventphoto/legobatman.jpg",
+      url: "https://www.facebook.com/events/1645162055778181/",
+      time: "14:00pm",
+      location: "The AMC (M4 4EN)",
+    },
   ];
   $scope.pastevents = [
     {
