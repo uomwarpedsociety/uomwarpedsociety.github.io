@@ -3,6 +3,17 @@ app.controller('EventController', function($scope,$routeParams) {
   $scope.params = $routeParams;
   $scope.events = [
     {
+      date: "08/03/2017",
+      title: "Logan",
+      description: "In the near future, a weary Logan cares for an ailing Professor X in a hide out on the Mexican border. But Logan's attempts to hide from the world and his legacy are up-ended when a young mutant arrives, being pursued by dark forces.",
+      photo: "image/eventphoto/logan.jpg",
+      url: "https://www.facebook.com/events/185844878570673/",
+      time: "19:00pm",
+      location: "The AMC (M4 4EN)",
+    },
+  ];
+  $scope.pastevents = [
+    {
       date: "05/02/2017",
       title: "Lego Batman",
       description: "NANANANANANANANA NANANANANANANANA",
@@ -11,8 +22,6 @@ app.controller('EventController', function($scope,$routeParams) {
       time: "14:00pm",
       location: "The AMC (M4 4EN)",
     },
-  ];
-  $scope.pastevents = [
     {
       date: "16/12/2016",
       title: "Christmas Party",
