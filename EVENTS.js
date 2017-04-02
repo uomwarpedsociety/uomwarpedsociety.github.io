@@ -3,9 +3,9 @@ app.controller('EventController', function($scope,$routeParams) {
   $scope.params = $routeParams;
   $scope.events = [
     {
-      date: "27/03/2017",
-      title: "Monthly Quiz Night #3",
-      description: "Our monthly quiz night, take 3.",
+      date: "01/05/2017",
+      title: "Warped D&D Night",
+      description: "Warped is going to try and host a D&D night... yeah it'll be terrible. Join our discord group for the lowdown (link on facebook or bottom of website)",
       photo: "image/eventphoto/quiz3.jpg",
       url: "https://www.facebook.com/events/640804472780117",
       time: "7:00pm",
@@ -13,6 +13,15 @@ app.controller('EventController', function($scope,$routeParams) {
     }
   ];
   $scope.pastevents = [
+    {
+      date: "27/03/2017",
+      title: "Monthly Quiz Night #3",
+      description: "Our monthly quiz night, take 3.",
+      photo: "image/eventphoto/quiz3.jpg",
+      url: "https://www.facebook.com/events/640804472780117",
+      time: "7:00pm",
+      location: "Sandbar (M1 7HL)",
+    },
     {
       date: "08/03/2017",
       title: "Logan",
