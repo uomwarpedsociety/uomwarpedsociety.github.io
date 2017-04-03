@@ -18,7 +18,7 @@ app.controller('EventController', function($scope,$routeParams) {
       title: "Monthly Quiz Night #3",
       description: "Our monthly quiz night, take 3.",
       photo: "image/eventphoto/quiz3.jpg",
-      url: "https://www.facebook.com/events/640804472780117",
+      url: "#/dnd",
       time: "7:00pm",
       location: "Sandbar (M1 7HL)",
     },
