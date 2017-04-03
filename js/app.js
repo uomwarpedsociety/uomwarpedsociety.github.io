@@ -30,6 +30,10 @@ app.config(function ($routeProvider) {
       controller: 'CommitteeController',
       templateUrl: 'page/committee.html'
     })
+    .when('/dnd', {
+      controller: 'dndController',
+      templateUrl: 'page/dnd.html'
+    })
 });
 
 app.controller('MainController', function($scope,$route,$routeParams,$location) {
@@ -46,4 +50,8 @@ app.controller('JoinController', function($scope,$routeParams) {
 app.controller('CommitteeController', function($scope,$routeParams) {
   $scope.name = 'CommitteeController';
   $scope.params = $routeParams;
+})
+
+app.controller('dndController', function($scope,$routeParams,$params) {
+  $scope.name = 'dndController'
 })
