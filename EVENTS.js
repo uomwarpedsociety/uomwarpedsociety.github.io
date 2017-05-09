@@ -5,7 +5,7 @@ app.controller('EventController', function($scope,$routeParams) {
     {
       date: "11/05/2017",
       title: "Alien Covenant",
-      description: "In the near future, a weary Logan cares for an ailing Professor X in a hide out on the Mexican border. But Logan's attempts to hide from the world and his legacy are up-ended when a young mutant arrives, being pursued by dark forces.",
+      description: "The crew of a colony ship, bound for a remote planet, discover an uncharted paradise with a threat beyond their imagination, and must attempt a harrowing escape.",
       photo: "image/eventphoto/aliencov.png",
       url: "https://www.facebook.com/events/1898738480396049/",
       time: "8:00pm",
