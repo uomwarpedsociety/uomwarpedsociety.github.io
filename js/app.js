@@ -2,10 +2,6 @@ var app = angular.module("myApp", ['ngRoute']);
 
 app.config(function ($routeProvider) {
   $routeProvider
-    .when('/', {
-      controller: 'MainController',
-      templateUrl: 'page/about.html'
-    })
     .when('/about', {
       controller: 'MainController',
       templateUrl: 'page/about.html',
@@ -34,6 +30,7 @@ app.config(function ($routeProvider) {
       controller: 'dndController',
       templateUrl: 'page/dnd.html'
     })
+    .otherwise('/about')
 });
 
 app.controller('MainController', function($scope,$route,$routeParams,$location) {
@@ -54,4 +51,9 @@ app.controller('CommitteeController', function($scope,$routeParams) {
 
 app.controller('dndController', function($scope,$routeParams,$params) {
   $scope.name = 'dndController'
+})
+
+app.controller('navCtrl', function($scope,$location) {
+  $scope.getClass = function(page) { if (page == $location.$$url.split('/')[1]) { return "selected" } else return "";}
+  $scope.changePage = function(page) { $location.path(page); }
 })

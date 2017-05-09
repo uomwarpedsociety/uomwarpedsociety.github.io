@@ -14,7 +14,6 @@
   <script type="text/javascript" src="js/angular.js"></script>
   <script type="text/javascript" src="js/angular-route.js"></script>
   <script type="text/javascript" src="js/app.js"></script>
-  <script type="text/javascript" src="js/main.js"></script>
   <script type="text/javascript" src="EVENTS.js"></script>
   <script type="text/javascript" src="PHOTOS.js"></script>
 </head>
@@ -24,15 +23,15 @@
   <div id="wrapper" class="clearfix">
 
     <div align="left" id="title">
-      <div><a href="#/about" id="titleclicker"><img src="image/warpedbanner.png" id="titleimage" alt="Warped" onclick="clickmain();"/></a></div>
+      <div><a href="#/about" id="titleclicker"><img src="image/warpedbanner.png" id="titleimage" alt="Warped" ng-click="changePage('about')"/></a></div>
     </div>
 
-    <div id="menubar">
-  		<a href="#/about"><img id="aboutimage" src="image/about.png" alt="Storytime" onmouseleave="leaveabout();" onmouseenter="hoverabout();" onclick="clickabout();"/></a>
-  		<a href="#/events"><img id="eventimage" src="image/events.png" alt="What we do" onmouseleave="leaveevent();" onmouseenter="hoverevent();" onclick="clickevent();"/></a>
-  		<a href="#/committee"><img id="committeeimage" src="image/committee.png" alt="Hail Anubis" onmouseleave="leavecommittee();" onmouseenter="hovercommittee();" onclick="clickcommittee();"/></a>
-  		<a href="#/pictures"><img id="pictureimage" src="image/pictures.png" alt="Warning: May contain Nerd" onmouseleave="leavepicture();" onmouseenter="hoverpicture();" onclick="clickpicture();"/></a>
-  		<a href="#/join"><img id="joinimage" src="image/join.png" alt="One of us! One of us!" onmouseleave="leavejoin();" onmouseenter="hoverjoin();" onclick="clickjoin();"/></a>
+    <div id="menubar" ng-controller="navCtrl">
+  		<div class="menuimage {{getClass('about')}}" ng-click="changePage('about')" id="aboutimage"></div>
+  		<div class="menuimage {{getClass('events')}}" ng-click="changePage('events')" id="eventimage"></div>
+  		<div class="menuimage {{getClass('committee')}}" ng-click="changePage('committee')" id="committeeimage"></div>
+  		<div class="menuimage {{getClass('pictures')}}" ng-click="changePage('pictures')" id="pictureimage"></div>
+  		<div class="menuimage {{getClass('join')}}" ng-click="changePage('join')" id="joinimage"></div>
     </div>
 
     <div ng-view></div>

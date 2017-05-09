@@ -40,6 +40,31 @@ a:hover   { color: #6600FF; }
 	width: 100%;
 }
 
+.menuimage {
+	width: 150px;
+	height: 50px;
+	float: left;
+	margin: 1px;
+}
+
+#aboutimage 							{ background-image: url("/image/about.png"); }
+#eventimage 							{ background-image: url("/image/events.png"); }
+#committeeimage 					{ background-image: url("/image/committee.png"); }
+#pictureimage 						{ background-image: url("/image/pictures.png"); }
+#joinimage 								{ background-image: url("/image/join.png"); }
+
+#aboutimage.selected 			{ background-image: url("/image/aboutselected.png"); }
+#eventimage.selected 			{ background-image: url("/image/eventsselected.png"); }
+#committeeimage.selected 	{ background-image: url("/image/committeeselected.png"); }
+#pictureimage.selected 		{ background-image: url("/image/picturesselected.png"); }
+#joinimage.selected 			{ background-image: url("/image/joinselected.png"); }
+
+#aboutimage:hover 				{ background-image: url("/image/abouthover.png"); cursor: pointer;}
+#eventimage:hover 				{ background-image: url("/image/eventshover.png"); cursor: pointer;}
+#committeeimage:hover 		{ background-image: url("/image/committeehover.png"); cursor: pointer;}
+#pictureimage:hover 			{ background-image: url("/image/pictureshover.png"); cursor: pointer;}
+#joinimage:hover 					{ background-image: url("/image/joinhover.png"); cursor: pointer;}
+
 #content {
 	background: black;
 	width: 765px;
