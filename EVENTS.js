@@ -1,6 +1,20 @@
-app.controller('EventController', function($scope,$routeParams) {
+app.factory('facebook', function($http) {
+  return {
+    get: function(callback) {
+      var data = []
+      return $http({
+        method:"GET",
+        url:"https://graph.facebook.com/v2.9/2304438276/events?access_token=EAACEdEose0cBAGWib3M3J0j1BDgWDsM2jMMpZAPFpHgq6ZBmAr3MG5vdCRbuDtXX4oHdpZBSe8v61TYGt35rooUB4LAaUZBbbefJAo3UtxK6qMAbBfBbJycZCKrwl20hPL3xQUlpg1LhK6IgmcF9qhmvDdnYviOaDLA0kU2E7JYnU8hJVDzqd5ZB2854ZBfZBKAZD&debug=all&format=json&method=get&fields=id,attending_count,cover,description,interested_count,name,place,start_time"
+      }).then(function(response){
+        return response.data.data
+      })
+    }
+  }
+})
+
+app.controller('EventController', function($scope, facebook) {
   $scope.name = 'EventController';
-  $scope.params = $routeParams;
+
   $scope.events = [
     {
       date: "11/05/2017",
@@ -212,4 +226,8 @@ app.controller('EventController', function($scope,$routeParams) {
       location: "The AMC (M4 4EN)",
     },
   ];
+
+  facebook.get().then(function(response){
+    console.log(response)
+  })
 })

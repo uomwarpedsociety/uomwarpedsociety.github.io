@@ -33,23 +33,19 @@ app.config(function ($routeProvider) {
     .otherwise('/about')
 });
 
-app.controller('MainController', function($scope,$route,$routeParams,$location) {
-  $scope.$route = $route;
-  $scope.$location = $location;
-  $scope.$routeParams = $routeParams;
+app.controller('MainController', function($scope) {
+
 })
 
-app.controller('JoinController', function($scope,$routeParams) {
+app.controller('JoinController', function($scope) {
   $scope.name = 'JoinController';
-  $scope.params = $routeParams;
 })
 
-app.controller('CommitteeController', function($scope,$routeParams) {
+app.controller('CommitteeController', function($scope) {
   $scope.name = 'CommitteeController';
-  $scope.params = $routeParams;
 })
 
-app.controller('dndController', function($scope,$routeParams,$params) {
+app.controller('dndController', function($scope) {
   $scope.name = 'dndController'
 })
 
