@@ -3,14 +3,14 @@
       <div ng-repeat="event in events">
         <div id="event">
           <div>
-            <a ng-href="https://www.facebook.com/events/222770851410698/{{event.id}}"><h3><b>{{ event.name }}</b></h3></a>
+            <a ng-href="{{ event.url }}"><h3><b>{{ event.title }}</b></h3></a>
             <h5 id="eventdate">{{ event.date }}</h5>
           </div>
           <div>
-            <a ng-href="https://www.facebook.com/events/222770851410698/{{event.id}}"><img id="eventphoto" ng-src="{{ event.cover.source }}"></a>
+            <a ng-href="{{ event.url }}"><img id="eventphoto" ng-src="{{ event.photo }}"></a>
 				    <p id="eventdescription">{{ event.description }}</p>
-            <p id="eventdescription">When: {{ event.start_time | date }}</p>
-            <p id="eventdescription">Where: {{ event.place.name }}</p>
+            <p id="eventdescription">When: {{ event.time }}</p>
+            <p id="eventdescription">Where: {{ event.location }}</p>
           </div>
         </div>
       </div>
