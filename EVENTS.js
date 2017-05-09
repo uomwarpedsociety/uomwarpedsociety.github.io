@@ -3,6 +3,35 @@ app.controller('EventController', function($scope,$routeParams) {
   $scope.params = $routeParams;
   $scope.events = [
     {
+      date: "11/05/2017",
+      title: "Alien Covenant",
+      description: "In the near future, a weary Logan cares for an ailing Professor X in a hide out on the Mexican border. But Logan's attempts to hide from the world and his legacy are up-ended when a young mutant arrives, being pursued by dark forces.",
+      photo: "image/eventphoto/aliencov.png",
+      url: "https://www.facebook.com/events/1898738480396049/",
+      time: "8:00pm",
+      location: "The Odeon (Printworks)",
+    },
+    {
+      date: "15/05/2017",
+      title: "Warped Committee Elections 2017-2018",
+      description: "Democracy time!",
+      photo: "image/eventphoto/votebatman.jpg",
+      url: "https://www.facebook.com/events/804094523071243",
+      time: "7:00pm",
+      location: "Sandbar (M1 7HL)",
+    },
+    {
+      date: "06/06/2017",
+      title: "Mid-term Pub Crawl",
+      description: "Northern Quarter Bar Crawl taking advantage of all the best happy hours available on the legendary NQ Tuesday night.",
+      photo: "image/eventphoto/barcrawl.jpg",
+      url: "https://www.facebook.com/events/1667956963220146/",
+      time: "6:00pm",
+      location: "The Whiskey Jar",
+    },
+  ];
+  $scope.pastevents = [
+    {
       date: "01/05/2017",
       title: "Warped D&D Night",
       description: "Warped is going to try and host a D&D night... yeah it'll be terrible/awesome. Join our discord group for the lowdown (link on facebook or bottom of website)",
@@ -11,8 +40,6 @@ app.controller('EventController', function($scope,$routeParams) {
       time: "1:00pm",
       location: "(contact a committee member for details)",
     },
-  ];
-  $scope.pastevents = [
     {
       date: "27/03/2017",
       title: "Monthly Quiz Night #3",
