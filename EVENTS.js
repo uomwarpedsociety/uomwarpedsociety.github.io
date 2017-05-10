@@ -49,9 +49,13 @@ app.factory('facebook', function($http) {
         return response.data.data
       })
     },
-    gistEvents: function() {
-      return $http.get("https://api.github.com/gists/1667956963220146").then(function(response) {
-        return JSON.parse(response.data.files["events.json"].content)
+    gistEvents: function(callback) {
+      $http.get("https://api.github.com/gists/1667956963220146").then(function(response) {
+        callback(JSON.parse(response.data.files["events.json"].content))
+      }, function(response) {
+        $http.get("https://api.github.com/gists/33b4ea04412ad411e54e23ec676d5258").then(function(response) {
+          callback(JSON.parse(response.data.files["events.json"].content).data)
+        })
       })
     }
   }
@@ -74,6 +78,7 @@ app.controller('EventController', function($scope, $rootScope, facebook) {
       }
     }
     $scope.facebook_loaded = true;
+    $scope.view_past = false;
   }
 
   $rootScope.$watch('$routeChangeSuccess',function(){
@@ -96,8 +101,7 @@ app.controller('EventController', function($scope, $rootScope, facebook) {
 
   $scope.getEvents = function() {
     facebook.auth(function(response) {
-      if (response.ok) { facebook.getEvents().then(parseEvents) } else { facebook.gistEvents().then(parseEvents) }
-      $scope.view_past = false;
+      if (response.ok) { facebook.getEvents().then(parseEvents) } else { facebook.gistEvents(parseEvents) }
     })
   }
 
