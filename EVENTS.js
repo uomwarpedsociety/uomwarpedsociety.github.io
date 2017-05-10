@@ -51,7 +51,6 @@ app.factory('facebook', function($http) {
     },
     gistEvents: function() {
       return $http.get("https://api.github.com/gists/1667956963220146").then(function(response) {
-        console.log(response)
         return JSON.parse(response.data.files["events.json"].content)
       })
     }
