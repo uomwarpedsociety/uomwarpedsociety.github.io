@@ -52,8 +52,6 @@ app.factory('facebook', function($http) {
 
 app.controller('EventController', function($scope, $rootScope, facebook) {
 
-  var err_shown = false;
-
   $rootScope.$watch('$routeChangeSuccess',function(){
     try {
       $scope.getEvents()
@@ -91,11 +89,6 @@ app.controller('EventController', function($scope, $rootScope, facebook) {
           }
           $scope.facebook_loaded = true;
         })
-      } else {
-        if (!err_shown) {
-          alert("Sorry, you aren't logged into facebook. Events shown will be an archive and may not be up to date.")
-          err_shown = true;
-        }
       }
     })
   }
