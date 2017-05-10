@@ -1,4 +1,4 @@
-var resolver = []
+var fb_resolver = []
 
 window.fbAsyncInit = function() {
   FB.init({
@@ -7,9 +7,7 @@ window.fbAsyncInit = function() {
     version    : 'v2.9'
   });
   FB.AppEvents.logPageView();
-  for (var i = 0; i < resolver.length; i++) {
-    resolver[i]()
-  }
+  for (var i = 0; i < fb_resolver.length; i++) {fb_resolver[i]()}
 };
 
 (function(d, s, id){
@@ -23,16 +21,25 @@ window.fbAsyncInit = function() {
 app.factory('facebook', function($http) {
 
   var host          = "https://graph.facebook.com/v2.9/"
-  var clienttoken   = "2068611b0a4471c0dd13c6fc2b6400ea"
   var group_id      = "2304438276"
-  var client_id     = "1860851397508648"
-  var access_token = ""
+  var gists_id      = "e0e9b14b7e2c358a0e18054a8587a4f1"
+  var access_token  = ""
+
+  var gistEvents = function(events) {
+    $http({
+      method:"GET",
+      url:"https://github.com/login/oauth/authorize?scope=gist",
+    }).then(function(response) {
+      console.log(response)
+    })
+  }
 
   return {
     auth: function(callback) {
       FB.getLoginStatus(function(response) {
         try {
           access_token = response.authResponse.accessToken
+          console.log(response)
           response.ok = true
           callback(response)
         } catch (e) {
@@ -45,7 +52,8 @@ app.factory('facebook', function($http) {
       return $http.get(host+"/"+group_id+"/events?access_token="+access_token+"&fields=id,attending_count,cover,description,start_time,interested_count,name,place").then(function(response) {
         return response.data.data
       })
-    }
+    },
+    gistEvents:gistEvents
   }
 })
 
@@ -58,7 +66,7 @@ app.controller('EventController', function($scope, $rootScope, facebook) {
     try {
       $scope.getEvents()
     } catch (e) {
-      resolver.push($scope.getEvents)
+      fb_resolver.push($scope.getEvents)
     }
   })
 
