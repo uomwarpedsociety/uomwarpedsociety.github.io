@@ -30,6 +30,10 @@ app.config(function ($routeProvider) {
       controller: 'dndController',
       templateUrl: 'page/dnd.html'
     })
+    .when('/admin', {
+      controller: 'adminController',
+      templateUrl: 'page/admin.html'
+    })
     .otherwise('/about')
 });
 
@@ -47,6 +51,10 @@ app.controller('CommitteeController', function($scope) {
 
 app.controller('dndController', function($scope) {
   $scope.name = 'dndController'
+})
+
+app.controller('adminController', function($scope) {
+  
 })
 
 app.controller('navCtrl', function($scope,$location) {

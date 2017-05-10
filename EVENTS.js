@@ -30,7 +30,9 @@ app.factory('facebook', function($http) {
 
   return {
     auth: function(callback) {
+      var ok = false;
       FB.getLoginStatus(function(response) {
+        ok = true;
         try {
           access_token = response.authResponse.accessToken
           response.ok = true
@@ -40,10 +42,17 @@ app.factory('facebook', function($http) {
           callback(response)
         }
       });
+      if (!ok) callback({ok:false})
     },
     getEvents: function() {
       return $http.get(host+"/"+group_id+"/events?access_token="+access_token+"&fields=id,attending_count,cover,description,start_time,interested_count,name,place").then(function(response) {
         return response.data.data
+      })
+    },
+    gistEvents: function() {
+      return $http.get("https://api.github.com/gists/1667956963220146").then(function(response) {
+        console.log(response)
+        return JSON.parse(response.data.files["events.json"].content)
       })
     }
   }
@@ -51,6 +60,22 @@ app.factory('facebook', function($http) {
 
 
 app.controller('EventController', function($scope, $rootScope, facebook) {
+
+  var parseEvents = function(events) {
+    $scope.events = []
+    $scope.pastevents = []
+    for (var i = 0; i < events.length; i++) {
+      var evt = events[i]
+      evt.start_time = new Date(evt.start_time)
+      var now = new Date(Date.now())
+      if (evt.start_time.getTime() - now.getTime() < -100000) {
+        $scope.pastevents.push(evt)
+      } else {
+        $scope.events.push(evt)
+      }
+    }
+    $scope.facebook_loaded = true;
+  }
 
   $rootScope.$watch('$routeChangeSuccess',function(){
     try {
@@ -72,24 +97,8 @@ app.controller('EventController', function($scope, $rootScope, facebook) {
 
   $scope.getEvents = function() {
     facebook.auth(function(response) {
-      if (response.ok) {
-        $scope.view_past = false;
-        facebook.getEvents().then(function(response) {
-          $scope.events = []
-          $scope.pastevents = []
-          for (var i = 0; i < response.length; i++) {
-            var evt = response[i]
-            evt.start_time = new Date(evt.start_time)
-            var now = new Date(Date.now())
-            if (evt.start_time.getTime() - now.getTime() < -100000) {
-              $scope.pastevents.push(evt)
-            } else {
-              $scope.events.push(evt)
-            }
-          }
-          $scope.facebook_loaded = true;
-        })
-      }
+      if (response.ok) { facebook.getEvents().then(parseEvents) } else { facebook.gistEvents().then(parseEvents) }
+      $scope.view_past = false;
     })
   }
 
