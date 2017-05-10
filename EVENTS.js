@@ -1,18 +1,106 @@
+var resolver = []
+
+window.fbAsyncInit = function() {
+  FB.init({
+    appId      : "1860851397508648",
+    xfbml      : true,
+    version    : 'v2.9'
+  });
+  FB.AppEvents.logPageView();
+  for (var i = 0; i < resolver.length; i++) {
+    resolver[i]()
+  }
+};
+
+(function(d, s, id){
+   var js, fjs = d.getElementsByTagName(s)[0];
+   if (d.getElementById(id)) {return;}
+   js = d.createElement(s); js.id = id;
+   js.src = "//connect.facebook.net/en_US/sdk.js";
+   fjs.parentNode.insertBefore(js, fjs);
+ }(document, 'script', 'facebook-jssdk'));
+
 app.factory('facebook', function($http) {
+
+  var host          = "https://graph.facebook.com/v2.9/"
+  var clienttoken   = "2068611b0a4471c0dd13c6fc2b6400ea"
+  var group_id      = "2304438276"
+  var client_id     = "1860851397508648"
+  var access_token = ""
+
   return {
-    get: function(callback) {
-      var data = []
-      return $http({
-        method:"GET",
-        url:"https://graph.facebook.com/v2.9/2304438276/events?access_token=EAACEdEose0cBAGWib3M3J0j1BDgWDsM2jMMpZAPFpHgq6ZBmAr3MG5vdCRbuDtXX4oHdpZBSe8v61TYGt35rooUB4LAaUZBbbefJAo3UtxK6qMAbBfBbJycZCKrwl20hPL3xQUlpg1LhK6IgmcF9qhmvDdnYviOaDLA0kU2E7JYnU8hJVDzqd5ZB2854ZBfZBKAZD&debug=all&format=json&method=get&fields=id,attending_count,cover,description,interested_count,name,place,start_time"
-      }).then(function(response){
+    auth: function(callback) {
+      FB.getLoginStatus(function(response) {
+        try {
+          access_token = response.authResponse.accessToken
+          response.ok = true
+          callback(response)
+        } catch (e) {
+          response.ok = false
+          callback(response)
+        }
+      });
+    },
+    getEvents: function() {
+      return $http.get(host+"/"+group_id+"/events?access_token="+access_token+"&fields=id,attending_count,cover,description,start_time,interested_count,name,place").then(function(response) {
         return response.data.data
       })
     }
   }
 })
 
-app.controller('EventController', function($scope, facebook) {
+
+app.controller('EventController', function($scope, $rootScope, facebook) {
+
+  var err_shown = false;
+
+  $rootScope.$watch('$routeChangeSuccess',function(){
+    try {
+      $scope.getEvents()
+    } catch (e) {
+      resolver.push($scope.getEvents)
+    }
+  })
+
+  $scope.facebook_loaded = false;
+  $scope.view_past = false;
+
+  $scope.togglepast = function() {
+    var cache = $scope.events
+    $scope.events = $scope.pastevents
+    $scope.pastevents = cache
+    $scope.view_past = !$scope.view_past
+  }
+
+  $scope.getEvents = function() {
+    facebook.auth(function(response) {
+      if (response.ok) {
+        $scope.view_past = false;
+        facebook.getEvents().then(function(response) {
+          if (response.length == 0) return;
+          $scope.events = []
+          $scope.pastevents = []
+          for (var i = 0; i < response.length; i++) {
+            var evt = response[i]
+            evt.start_time = new Date(evt.start_time)
+            var now = new Date(Date.now())
+            if (evt.start_time.getTime() - now.getTime() < -100000) {
+              $scope.pastevents.push(evt)
+            } else {
+              $scope.events.push(evt)
+            }
+          }
+          $scope.facebook_loaded = true;
+        })
+      } else {
+        if (!err_shown) {
+          alert("Sorry, you aren't logged into facebook. Events shown will be an archive and may not be up to date.")
+          err_shown = true;
+        }
+      }
+    })
+  }
+
   $scope.name = 'EventController';
 
   $scope.events = [
@@ -227,7 +315,4 @@ app.controller('EventController', function($scope, facebook) {
     },
   ];
 
-  facebook.get().then(function(response){
-    console.log(response)
-  })
 })

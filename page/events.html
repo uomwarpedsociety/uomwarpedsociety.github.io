@@ -1,18 +1,41 @@
-<div id="content" ng-controller="EventController">
+<div id="content">
       <div id="pagetitle">Coming up this year</div>
-      <div ng-repeat="event in events">
-        <div id="event">
-          <div>
-            <a ng-href="{{ event.url }}"><h3><b>{{ event.title }}</b></h3></a>
-            <h5 id="eventdate">{{ event.date }}</h5>
-          </div>
-          <div>
-            <a ng-href="{{ event.url }}"><img id="eventphoto" ng-src="{{ event.photo }}"></a>
-				    <p id="eventdescription">{{ event.description }}</p>
-            <p id="eventdescription">When: {{ event.time }}</p>
-            <p id="eventdescription">Where: {{ event.location }}</p>
+
+      <div class="cache_events" ng-show="!facebook_loaded">
+        <div ng-show="view_past" id="pagetitle"><a href="" ng-click="togglepast()"><h3><b>Back to current events.</b></h3></a></div>
+        <div ng-repeat="event in events">
+          <div id="event">
+            <div>
+              <a ng-href="{{ event.url }}"><h3><b>{{ event.title }}</b></h3></a>
+              <h5 id="eventdate">{{ event.date }}</h5>
+            </div>
+            <div>
+              <a ng-href="{{ event.url }}"><img id="eventphoto" ng-src="{{ event.photo }}"></a>
+  				    <p id="eventdescription">{{ event.description }}</p>
+              <p id="eventdescription">When: {{ event.time }}</p>
+              <p id="eventdescription">Where: {{ event.location }}</p>
+            </div>
           </div>
         </div>
+        <div ng-show="!view_past" id="pagetitle"><a href="" ng-click="togglepast()"><h3><b>Click here to see previous events!</b></h3></a></div>
       </div>
-      <div id="pagetitle"><a href="#/pastevents"><h3><b>Click here to see previous events!</b></h3></a></div>
+
+      <div class="facebook_events" ng-show="facebook_loaded">
+        <div ng-show="view_past" id="pagetitle"><a href="" ng-click="togglepast()"><h3><b>Back to current events.</b></h3></a></div>
+        <div ng-repeat="event in events | orderBy : event.start_time : !view_past">
+          <div id="event">
+            <div>
+              <a ng-href="https://www.facebook.com/events/{{event.id}}"><h3><b>{{ event.name }}</b></h3></a>
+              <h5 id="eventdate">{{ event.start_time | date }}</h5>
+            </div>
+            <div>
+              <a ng-href="https://www.facebook.com/events/{{event.id}}"><img id="eventphoto" ng-src="{{ event.cover.source }}"></a>
+  				    <p id="eventdescription">{{ event.description }}</p>
+              <p id="eventdescription">When: {{ event.start_time | date }}</p>
+              <p id="eventdescription">Where: {{ event.place.name }}</p>
+            </div>
+          </div>
+        </div>
+        <div ng-show="!view_past" id="pagetitle"><a href="" ng-click="togglepast()"><h3><b>Click here to see previous events!</b></h3></a></div>
+      </div>
 </div>
