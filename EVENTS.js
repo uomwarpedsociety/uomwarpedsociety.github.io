@@ -1,4 +1,34 @@
-var resolver = []
+var resolver = {
+  data:[],
+  defer: function(callback,params) {
+    if (typeof params != 'undefined') {
+      resolver.data.push({
+        callback:callback,
+        params:params
+      })
+    } else {
+      resolver.data.push({
+        callback:callback
+      })
+    }
+  },
+  resolve: function(callback) {
+    var fails = []
+    var errors = []
+    for (var i = 0; i < resolver.data.length; i++) {
+      try {
+        if (typeof resolver.data[i].params != 'undefined') {
+          resolver.data[i].callback.apply(null,resolver.data[i].params)
+        } else resolver.data[i].callback();
+      } catch (e) {
+        errors.push(e)
+        fails.push(resolver.data[i])
+      }
+    }
+    resolver.data = fails
+    if (typeof callback == 'function') callback(fails,errors);
+  }
+}
 
 window.fbAsyncInit = function() {
   FB.init({
@@ -7,9 +37,7 @@ window.fbAsyncInit = function() {
     version    : 'v2.9'
   });
   FB.AppEvents.logPageView();
-  for (var i = 0; i < resolver.length; i++) {
-    resolver[i]()
-  }
+  resolver.resolve()
 };
 
 (function(d, s, id){
@@ -22,10 +50,6 @@ window.fbAsyncInit = function() {
 
 app.factory('facebook', function($http) {
 
-  var host          = "https://graph.facebook.com/v2.9/"
-  var clienttoken   = "2068611b0a4471c0dd13c6fc2b6400ea"
-  var group_id      = "2304438276"
-  var client_id     = "1860851397508648"
   var access_token = ""
 
   return {
@@ -45,7 +69,7 @@ app.factory('facebook', function($http) {
       if (!ok) callback({ok:false})
     },
     getEvents: function() {
-      return $http.get(host+"/"+group_id+"/events?access_token="+access_token+"&fields=id,attending_count,cover,description,start_time,interested_count,name,place").then(function(response) {
+      return $http.get("https://graph.facebook.com/v2.9//2304438276/events?access_token="+access_token+"&fields=id,attending_count,cover,description,start_time,interested_count,name,place").then(function(response) {
         return response.data.data
       })
     },
@@ -64,6 +88,11 @@ app.factory('facebook', function($http) {
 
 app.controller('EventController', function($scope, $rootScope, facebook) {
 
+  $scope.facebook_loaded = false;
+  $scope.view_past = false;
+
+  $rootScope.$watch('$routeChangeSuccess',function(){ try { $scope.getEvents() } catch (e) { resolver.defer($scope.getEvents) }})
+
   var parseEvents = function(events) {
     $scope.events = []
     $scope.pastevents = []
@@ -81,17 +110,6 @@ app.controller('EventController', function($scope, $rootScope, facebook) {
     $scope.view_past = false;
   }
 
-  $rootScope.$watch('$routeChangeSuccess',function(){
-    try {
-      $scope.getEvents()
-    } catch (e) {
-      resolver.push($scope.getEvents)
-    }
-  })
-
-  $scope.facebook_loaded = false;
-  $scope.view_past = false;
-
   $scope.togglepast = function() {
     var cache = $scope.events
     $scope.events = $scope.pastevents
@@ -105,7 +123,11 @@ app.controller('EventController', function($scope, $rootScope, facebook) {
     })
   }
 
-  $scope.name = 'EventController';
+  $scope.getLoc = function(location) {
+    if (typeof location.zip != 'undefined') return location.zip
+    if (typeof location.street != 'undefined') return location.street
+    return "Map Link"
+  }
 
   $scope.events = [
     {
