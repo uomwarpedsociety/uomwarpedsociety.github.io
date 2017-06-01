@@ -1,25 +1,6 @@
 <div id="content">
       <div id="pagetitle">Coming up this year</div>
 
-      <div class="cache_events" ng-show="!facebook_loaded">
-        <div ng-show="view_past" id="pagetitle"><a href="" ng-click="togglepast()"><h3><b>Back to current events.</b></h3></a></div>
-        <div ng-repeat="event in events">
-          <div id="event">
-            <div>
-              <a ng-href="{{ event.url }}"><h3><b>{{ event.title }}</b></h3></a>
-              <h5 id="eventdate">{{ event.date }}</h5>
-            </div>
-            <div>
-              <a ng-href="{{ event.url }}"><img id="eventphoto" ng-src="{{ event.photo }}"></a>
-  				    <p id="eventdescription">{{ event.description }}</p>
-              <p id="eventdescription">When: {{ event.time }}</p>
-              <p id="eventdescription">Where: {{ event.location }}</p>
-            </div>
-          </div>
-        </div>
-        <div ng-show="!view_past" id="pagetitle"><a href="" ng-click="togglepast()"><h3><b>Click here to see previous events!</b></h3></a></div>
-      </div>
-
       <div class="facebook_events" ng-show="facebook_loaded">
         <div ng-show="view_past" id="pagetitle"><a href="" ng-click="togglepast()"><h3><b>Back to current events.</b></h3></a></div>
         <div ng-repeat="event in events | orderBy : event.start_time : !view_past">
