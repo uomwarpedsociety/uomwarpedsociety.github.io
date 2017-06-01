@@ -45,19 +45,19 @@ app.factory('facebook', function($http) {
   }
 
   return {
-    auth: function(callback) {
+    auth: function(callback,nologin) {
       FB.getLoginStatus(function(response) {
         try {
           access_token = response.authResponse.accessToken
           response.ok = true
           callback(response)
         } catch (e) {
-          console.log(e)
-          fblogin(callback)
+          response.ok = false
+          if (nologin) { callback(response) } else { fblogin(callback) }
         }
       },function(response) {
-        console.log(response)
-        fblogin(callback)
+        response.ok = false
+        if (nologin) { callback(response) } else { fblogin(callback) }
       });
     },
     getEvents: function() {
@@ -87,7 +87,7 @@ app.controller('EventController', function($scope, $rootScope, facebook) {
     facebook.auth(function(response) {
       if (response.ok)  { facebook.getEvents().then(parseEvents) }
       else              { facebook.gistEvents().then(parseEvents) }
-    })
+    },false)
   }
 
   $rootScope.$watch('$routeChangeSuccess', getEvents)
