@@ -19,36 +19,35 @@ app.factory('facebook', function($http) {
 
   var access_token = ""
 
+  var fblogin = function(callback) {
+    FB.login(function(response) {
+      try {
+        access_token = response.authResponse.accessToken
+        response.ok = true
+        callback(response)
+      } catch (e) {
+        console.log(e)
+        response.ok = false
+        callback(response)
+      }
+    })
+  }
+
   return {
     auth: function(callback) {
-      var ok = false;
       FB.getLoginStatus(function(response) {
-        ok = true;
         try {
           access_token = response.authResponse.accessToken
           response.ok = true
           callback(response)
         } catch (e) {
           console.log(e)
-          ok = false
+          fblogin(callback)
         }
       },function(response) {
         console.log(response)
-        ok = false
+        fblogin(callback)
       });
-      if (!ok) {
-        FB.login(function(response) {
-          try {
-            access_token = response.authResponse.accessToken
-            response.ok = true
-            callback(response)
-          } catch (e) {
-            console.log(e)
-            response.ok = false
-            callback(response)
-          }
-        })
-      }
     },
     getEvents: function() {
       return $http.get("https://graph.facebook.com/v2.9//2304438276/events?access_token="+access_token+"&fields=id,attending_count,cover,description,start_time,interested_count,name,place").then(function(response) {
