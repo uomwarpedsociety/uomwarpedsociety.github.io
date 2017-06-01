@@ -42,7 +42,8 @@ app.factory('facebook', function($http) {
       })
     },
     gistEvents: function() {
-      $http.get("https://api.github.com/gists/d6096725a50ea26916a63d45c04140bf").then(function(response) {
+      console.log('hi')
+      return $http.get("https://api.github.com/gists/d6096725a50ea26916a63d45c04140bf").then(function(response) {
         console.log(response)
         return JSON.parse(response.data.files["events.json"].content)
       })
@@ -56,9 +57,7 @@ app.controller('EventController', function($scope, $rootScope, facebook) {
   $scope.facebook_loaded = false;
   $scope.view_past = false;
 
-  $rootScope.$watch('$routeChangeSuccess', $scope.getEvents)
-
-  $scope.getEvents = function() {
+  var getEvents = function() {
     facebook.gistEvents().then(function(response) {
       console.log(response)
       parseEvents(response)
@@ -66,6 +65,8 @@ app.controller('EventController', function($scope, $rootScope, facebook) {
       $scope.view_past = false;
     })
   }
+
+  $rootScope.$watch('$routeChangeSuccess', getEvents)
 
   var parseEvents = function(events) {
     $scope.events = []
