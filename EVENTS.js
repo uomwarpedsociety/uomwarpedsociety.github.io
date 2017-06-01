@@ -23,7 +23,6 @@ app.factory('facebook', function($http) {
     auth: function(callback) {
       var ok = false;
       FB.getLoginStatus(function(response) {
-        console.log(response)
         ok = true;
         try {
           access_token = response.authResponse.accessToken
@@ -42,9 +41,7 @@ app.factory('facebook', function($http) {
       })
     },
     gistEvents: function() {
-      console.log('hi')
       return $http.get("https://api.github.com/gists/d6096725a50ea26916a63d45c04140bf").then(function(response) {
-        console.log(response)
         return JSON.parse(response.data.files["events.json"].content)
       })
     }
@@ -59,7 +56,6 @@ app.controller('EventController', function($scope, $rootScope, facebook) {
 
   var getEvents = function() {
     facebook.gistEvents().then(function(response) {
-      console.log(response)
       parseEvents(response)
       $scope.facebook_loaded = true;
       $scope.view_past = false;
