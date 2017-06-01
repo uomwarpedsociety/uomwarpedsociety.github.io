@@ -1,166 +1,50 @@
 app.controller('PhotoController', function($scope, $routeParams) {
+
   $scope.name = 'PhotoController';
   $scope.params = $routeParams;
-  $scope.photos = [
-    {
-      location1: "",
-      url1: "image/photoalbum/1.jpg",
-      comment1: "",
-      date1: "",
+  $scope.photos = []
+  $scope.selected = 0
 
-      location2: "",
-      url2: "image/photoalbum/2.jpg",
-      comment2: "",
-      date2: "",
+  var extensions = ['jpg','png','gif']
 
-      location3: "",
-      url3: "image/photoalbum/3.jpg",
-      comment3: "",
-      date3: "",
-    },
-    {
-      location1: "",
-      url1: "image/photoalbum/4.jpg",
-      comment1: "",
-      date1: "",
+  var loadImage = function(index,extindex) {
+    var img = new Image()
+    img.onload = function(e) {
+      var obj = {
+        src: img.src,
+        width: img.width,
+        height: img.height
+      }
+      $scope.photos.push(obj)
+      loadImage(++index,0)
+    }
+    img.onerror = function() {
+      if (extindex < extensions.length - 1) {
+        loadImage(index,++extindex)
+      } else {
+        console.log(--index+' Images Loaded.')
+        $scope.$apply()
+      }
+    }
+    img.src = "image/photoalbum/"+index+"."+extensions[extindex]
+  }
 
-      location2: "",
-      url2: "image/photoalbum/5.jpg",
-      comment2: "",
-      date2: "",
+  loadImage(1,0)
 
-      location3: "",
-      url3: "image/photoalbum/6.jpg",
-      comment3: "",
-      date3: "",
-    },
-    {
-      location1: "",
-      url1: "image/photoalbum/7.jpg",
-      comment1: "",
-      date1: "",
+  $scope.openImage = function(index) {
+    $scope.selected = index
+    $scope.show_modal = true;
+  }
 
-      location2: "",
-      url2: "image/photoalbum/8.jpg",
-      comment2: "",
-      date2: "",
+  $scope.closeImage = function() {
+    $scope.show_modal = false;
+  }
 
-      location3: "",
-      url3: "image/photoalbum/9.jpg",
-      comment3: "",
-      date3: "",
-    },
-    {
-      location1: "",
-      url1: "image/photoalbum/10.jpg",
-      comment1: "",
-      date1: "",
+  document.addEventListener('keydown', function(e) {
+    if ($scope.show_modal) {
+      $scope.show_modal = false;
+      $scope.$apply()
+    }
+  })
 
-      location2: "",
-      url2: "image/photoalbum/11.jpg",
-      comment2: "",
-      date2: "",
-
-      location3: "",
-      url3: "image/photoalbum/12.jpg",
-      comment3: "",
-      date3: "",
-    },
-    {
-      location1: "",
-      url1: "image/photoalbum/13.jpg",
-      comment1: "",
-      date1: "",
-
-      location2: "",
-      url2: "image/photoalbum/14.jpg",
-      comment2: "",
-      date2: "",
-
-      location3: "",
-      url3: "image/photoalbum/15.jpg",
-      comment3: "",
-      date3: "",
-    },
-    {
-      location1: "",
-      url1: "image/photoalbum/16.jpg",
-      comment1: "",
-      date1: "",
-
-      location2: "",
-      url2: "image/photoalbum/17.jpg",
-      comment2: "",
-      date2: "",
-
-      location3: "",
-      url3: "image/photoalbum/18.jpg",
-      comment3: "",
-      date3: "",
-    },
-    {
-      location1: "",
-      url1: "image/photoalbum/19.jpg",
-      comment1: "",
-      date1: "",
-
-      location2: "",
-      url2: "image/photoalbum/20.jpg",
-      comment2: "",
-      date2: "",
-
-      location3: "",
-      url3: "image/photoalbum/21.jpg",
-      comment3: "",
-      date3: "",
-    },
-    {
-      location1: "",
-      url1: "image/photoalbum/22.jpg",
-      comment1: "",
-      date1: "",
-
-      location2: "",
-      url2: "image/photoalbum/23.jpg",
-      comment2: "",
-      date2: "",
-
-      location3: "",
-      url3: "image/photoalbum/24.jpg",
-      comment3: "",
-      date3: "",
-    },
-    {
-      location1: "",
-      url1: "image/photoalbum/25.jpg",
-      comment1: "",
-      date1: "",
-
-      location2: "",
-      url2: "image/photoalbum/26.jpg",
-      comment2: "",
-      date2: "",
-
-      location3: "",
-      url3: "image/photoalbum/27.jpg",
-      comment3: "",
-      date3: "",
-    },
-    {
-      location1: "",
-      url1: "image/photoalbum/28.jpg",
-      comment1: "",
-      date1: "",
-
-      location2: "",
-      url2: "image/photoalbum/29.jpg",
-      comment2: "",
-      date2: "",
-
-      location3: "",
-      url3: "image/photoalbum/30.jpg",
-      comment3: "",
-      date3: "",
-    },
-  ]
 })
