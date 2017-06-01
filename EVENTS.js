@@ -43,6 +43,7 @@ app.factory('facebook', function($http) {
           callback(response)
         } catch (e) {
           console.log(e)
+          alert('hi')
           fblogin(callback)
         }
       },function(response) {
