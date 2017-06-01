@@ -53,8 +53,21 @@ app.controller('dndController', function($scope) {
   $scope.name = 'dndController'
 })
 
-app.controller('adminController', function($scope) {
-  
+app.controller('adminController', function($scope,$rootScope,facebook) {
+  $scope.cacheEvents = function() {
+    facebook.auth(function(response) {
+      if (response.ok) {
+        facebook.getEvents().then(function(response) {
+          console.log(response)
+          $scope.dump = response
+          $scope.url = "https://gist.github.com/uomwarpedsociety/d6096725a50ea26916a63d45c04140bf"
+          alert('SUCCESS')
+        })
+      } else {
+        alert('FAIL')
+      }
+    })
+  }
 })
 
 app.controller('navCtrl', function($scope,$location) {
