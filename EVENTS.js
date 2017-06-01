@@ -117,6 +117,7 @@ app.controller('EventController', function($scope, $rootScope, facebook) {
 
   $scope.togglepast = function() {
     $scope.view_past = !$scope.view_past
+    var events = $scope.events
     $scope.events = $scope.pastevents
     $scope.pastevents = events
   }
