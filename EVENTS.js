@@ -1,3 +1,13 @@
+var resolver = {
+  promises: [],
+  resolve: function() {
+    for (var i = 0; i < promises.length; i++) {promises[i]()}
+  },
+  defer: function(_func) {
+    resolver.promises.push(_func)
+  }
+}
+
 window.fbAsyncInit = function() {
   FB.init({
     appId      : "1860851397508648",
@@ -5,6 +15,7 @@ window.fbAsyncInit = function() {
     version    : 'v2.9'
   });
   FB.AppEvents.logPageView();
+  resolver.resolve()
 };
 
 (function(d, s, id){
@@ -35,6 +46,7 @@ app.factory('facebook', function($http) {
 
   return {
     auth: function(callback) {
+      if (typeof)
       FB.getLoginStatus(function(response) {
         try {
           access_token = response.authResponse.accessToken
@@ -69,6 +81,10 @@ app.controller('EventController', function($scope, $rootScope, facebook) {
   $scope.view_past = false;
 
   var getEvents = function() {
+    if (typeof FB == 'undefined') {
+      resolver.defer(getEvents)
+      return;
+    }
     facebook.auth(function(response) {
       if (response.ok)  { facebook.getEvents().then(parseEvents) }
       else              { facebook.gistEvents().then(parseEvents) }
