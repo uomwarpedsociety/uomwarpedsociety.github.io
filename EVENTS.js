@@ -116,6 +116,10 @@ app.controller('EventController', function($scope, $rootScope, facebook) {
     return "Map Link"
   }
 
+  $scope.togglepast = function() {
+    $scope.view_past = !$scope.view_past
+  }
+
   $scope.events = []
   $scope.pastevents = []
 
