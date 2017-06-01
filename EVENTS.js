@@ -21,7 +21,6 @@ app.factory('facebook', function($http) {
 
   var fblogin = function(callback) {
     FB.login(function(response) {
-      console.log(response)
       try {
         access_token = response.authResponse.accessToken
         response.ok = true
@@ -42,9 +41,11 @@ app.factory('facebook', function($http) {
           response.ok = true
           callback(response)
         } catch (e) {
+          console.log(e)
           fblogin(callback)
         }
       },function(response) {
+        console.log(response)
         fblogin(callback)
       });
     },
