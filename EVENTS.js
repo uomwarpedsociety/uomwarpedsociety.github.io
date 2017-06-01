@@ -86,7 +86,7 @@ app.controller('EventController', function($scope, $rootScope, facebook) {
     facebook.auth(function(response) {
       if (response.ok)  { facebook.getEvents().then(parseEvents) }
       else              { facebook.gistEvents().then(parseEvents) }
-    },false)
+    },true)
   }
 
   $rootScope.$watch('$routeChangeSuccess', getEvents)
