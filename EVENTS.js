@@ -37,7 +37,6 @@ app.factory('facebook', function($http) {
         response.ok = true
         callback(response)
       } catch (e) {
-        console.log(e)
         response.ok = false
         callback(response)
       }
