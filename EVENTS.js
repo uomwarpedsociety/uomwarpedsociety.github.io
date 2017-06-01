@@ -69,10 +69,18 @@ app.controller('EventController', function($scope, $rootScope, facebook) {
   $scope.view_past = false;
 
   var getEvents = function() {
-    facebook.gistEvents().then(function(response) {
-      parseEvents(response)
-      $scope.facebook_loaded = true;
-      $scope.view_past = false;
+    facebook.auth(function(response) {
+      if (response.ok) {
+        facebook.getEvents().then(function(response) {
+          console.log(response)
+        })
+      } else {
+        facebook.gistEvents().then(function(response) {
+          parseEvents(response)
+          $scope.facebook_loaded = true;
+          $scope.view_past = false;
+        })
+      }
     })
   }
 
