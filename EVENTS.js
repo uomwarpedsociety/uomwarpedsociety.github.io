@@ -1,7 +1,7 @@
 var resolver = {
   promises: [],
   resolve: function() {
-    for (var i = 0; i < promises.length; i++) {promises[i]()}
+    for (var i = 0; i < resolver.promises.length; i++) {resolver.promises[i]()}
   },
   defer: function(_func) {
     resolver.promises.push(_func)
