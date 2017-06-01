@@ -58,7 +58,6 @@ app.controller('adminController', function($scope,$rootScope,facebook) {
     facebook.auth(function(response) {
       if (response.ok) {
         facebook.getEvents().then(function(response) {
-          console.log(response)
           $scope.dump = response
           $scope.url = "https://gist.github.com/uomwarpedsociety/d6096725a50ea26916a63d45c04140bf"
         })
