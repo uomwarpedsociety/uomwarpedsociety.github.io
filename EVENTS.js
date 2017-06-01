@@ -70,17 +70,8 @@ app.controller('EventController', function($scope, $rootScope, facebook) {
 
   var getEvents = function() {
     facebook.auth(function(response) {
-      if (response.ok) {
-        facebook.getEvents().then(function(response) {
-          console.log(response)
-        })
-      } else {
-        facebook.gistEvents().then(function(response) {
-          parseEvents(response)
-          $scope.facebook_loaded = true;
-          $scope.view_past = false;
-        })
-      }
+      if (response.ok)  { facebook.getEvents().then(parseEvents) }
+      else              { facebook.gistEvents().then(parseEvents) }
     })
   }
 
@@ -99,6 +90,8 @@ app.controller('EventController', function($scope, $rootScope, facebook) {
         $scope.events.push(evt)
       }
     }
+    $scope.facebook_loaded = true;
+    $scope.view_past = false;
   }
 
   $scope.getLoc = function(location) {
