@@ -44,7 +44,7 @@ app.factory('facebook', function($http) {
     gistEvents: function() {
       $http.get("https://api.github.com/gists/d6096725a50ea26916a63d45c04140bf").then(function(response) {
         return JSON.parse(response.data.files["events.json"].content)
-      }
+      })
     }
   }
 })
