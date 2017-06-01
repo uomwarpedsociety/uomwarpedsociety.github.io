@@ -46,7 +46,6 @@ app.factory('facebook', function($http) {
 
   return {
     auth: function(callback) {
-      if (typeof)
       FB.getLoginStatus(function(response) {
         try {
           access_token = response.authResponse.accessToken
