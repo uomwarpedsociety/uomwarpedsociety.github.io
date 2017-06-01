@@ -20,6 +20,7 @@ app.factory('facebook', function($http) {
   var access_token = ""
 
   var fblogin = function(callback) {
+    console.log(callback)
     FB.login(function(response) {
       try {
         access_token = response.authResponse.accessToken
