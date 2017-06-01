@@ -29,9 +29,12 @@ app.factory('facebook', function($http) {
           response.ok = true
           callback(response)
         } catch (e) {
-          response.ok = false
-          callback(response)
+          console.log(e)
+          ok = false
         }
+      },function(response) {
+        console.log(response)
+        ok = false
       });
       if (!ok) {
         FB.login(function(response) {
@@ -40,6 +43,7 @@ app.factory('facebook', function($http) {
             response.ok = true
             callback(response)
           } catch (e) {
+            console.log(e)
             response.ok = false
             callback(response)
           }
