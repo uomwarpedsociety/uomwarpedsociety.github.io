@@ -35,7 +35,13 @@ app.factory('facebook', function($http) {
           callback(response)
         }
       });
-      if (!ok) callback({ok:false})
+      if (!ok) {
+        FB.login(function(response) {
+          console.log(response)
+          response.ok = true
+          callback(response)
+        })
+      }
     },
     getEvents: function() {
       return $http.get("https://graph.facebook.com/v2.9//2304438276/events?access_token="+access_token+"&fields=id,attending_count,cover,description,start_time,interested_count,name,place").then(function(response) {
