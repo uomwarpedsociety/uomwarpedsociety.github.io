@@ -23,14 +23,12 @@ app.factory('facebook', function($http) {
     auth: function(callback) {
       var ok = false;
       FB.getLoginStatus(function(response) {
-        console.log(response)
         ok = true;
         try {
           access_token = response.authResponse.accessToken
           response.ok = true
           callback(response)
         } catch (e) {
-          console.log(e)
           response.ok = false
           callback(response)
         }
@@ -42,7 +40,6 @@ app.factory('facebook', function($http) {
             response.ok = true
             callback(response)
           } catch (e) {
-            console.log(e)
             response.ok = false
             callback(response)
           }
