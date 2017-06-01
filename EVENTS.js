@@ -37,9 +37,15 @@ app.factory('facebook', function($http) {
       });
       if (!ok) {
         FB.login(function(response) {
-          console.log(response)
-          response.ok = true
-          callback(response)
+          try {
+            access_token = response.authResponse.accessToken
+            response.ok = true
+            callback(response)
+          } catch (e) {
+            console.log(e)
+            response.ok = false
+            callback(response)
+          }
         })
       }
     },
