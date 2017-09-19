@@ -13,7 +13,7 @@
               <a ng-href="https://www.facebook.com/events/{{event.id}}"><img id="eventphoto" ng-src="{{ event.cover.source }}"></a>
   				    <p id="eventdescription">{{ event.description }}</p>
               <p id="eventdescription">When: {{ event.start_time | date : "hh:mm a"}}</p>
-              <p id="eventdescription">Where: {{ event.place.name }} <a ng-show="'Map Link' == getLoc(event.place.location)" href="http://maps.google.com/?q={{event.place.location.latitude}},{{event.place.location.longitude}}">{{ getLoc(event.place.location) }}</a></p>
+              <p id="eventdescription">Where: {{ event.place.name }} <a ng-show="'null' == getLoc(event.place.location)" href="http://maps.google.com/?q={{event.place.location.latitude}},{{event.place.location.longitude}}">{{ getLoc(event.place.location) }}</a></p>
             </div>
           </div>
         </div>

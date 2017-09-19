@@ -109,9 +109,11 @@ app.controller('EventController', function($scope, $rootScope, facebook) {
   }
 
   $scope.getLoc = function(location) {
-    if (typeof location == 'undefined')         return "Map Link";
-    if (typeof location.zip != 'undefined')     return location.zip;
-    if (typeof location.street != 'undefined')  return location.street;
+    if (typeof location           == 'undefined') { return "Map Link"; }
+    if (typeof location.zip       != 'undefined') { return location.zip; }
+    if (typeof location.street    != 'undefined') { return location.street; }
+    if (typeof location.latitude  == 'undefined') { return "null"; }
+    if (typeof location.longitude == 'undefined') { return "null"; }
     return "Map Link"
   }
 
